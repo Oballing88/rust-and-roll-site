@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rust &amp; Roll Hauling | Junk Removal, Junk Cars &amp; Equipment Hauling — North San Diego County</title>
+<meta name="description" content="Same-week junk removal, dead-car pickup, and light equipment hauling in Vista, Oceanside, Carlsbad &amp; North County. Flat rates, no hidden fees. Text or call for a quote today.">
+<meta name="theme-color" content="#173d1a">
+<!-- Update these two URLs if you use the netlify subdomain instead of a custom domain (see SETUP.md). -->
+<link rel="canonical" href="https://oballing88.github.io/rust-and-roll-site/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23173d1a'/><text x='32' y='44' font-size='26' font-family='Arial' font-weight='bold' fill='%23f4c20d' text-anchor='middle'>R%26R</text></svg>">
+<!-- Open Graph / social share preview (Facebook, Nextdoor, Marketplace, texts) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rust &amp; Roll Hauling — Junk, Dead Cars &amp; Equipment | North San Diego County">
+<meta property="og:description" content="Same-week junk removal, dead-car pickup &amp; light equipment hauling. Flat rates, no hidden fees. Text or call for a quote.">
+<meta property="og:url" content="https://oballing88.github.io/rust-and-roll-site/">
+<!-- og:image — add og-image.jpg (1200x630) once you have a truck/before-after photo, then uncomment:
+<meta property="og:image" content="https://rustandrollhauling.com/og-image.jpg"> -->
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"Rust & Roll Hauling",
+  "telephone":"+1-760-410-6887",
+  "email":"pawnsweat2021@gmail.com",
+  "url":"https://oballing88.github.io/rust-and-roll-site/",
+  "description":"Same-week junk removal, non-running junk car pickup, and light equipment hauling in North San Diego County. Flat rates, no hidden fees.",
+  "priceRange":"$$",
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"06:00","closes":"19:00"}],
+  "areaServed":[{"@type":"City","name":"Vista"},{"@type":"City","name":"Oceanside"},{"@type":"City","name":"Carlsbad"},{"@type":"City","name":"Escondido"},{"@type":"City","name":"Encinitas"},{"@type":"City","name":"San Marcos"}],
+  "makesOffer":[
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Junk & Trash Removal"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Junk & Scrap Car Removal"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Light Equipment Hauling"}}
+  ]
+}
+</script>
+<style>
+  /* Waste-management palette: forest green → yellow.
+     Variable names kept for stability; values repointed.
+       --rust*  = green (primary buttons, pills, accents)
+       --steel* = deep forest (header/hero/quote/footer base)
+       --gold   = yellow accent */
+  :root{
+    --rust:#2e7d32; --rust-dark:#1e5a22; --steel:#173d1a; --steel-light:#234e26;
+    --cream:#f3f7ec; --gold:#f4c20d; --text:#17210f; --muted:#5b6453;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--text);line-height:1.6;background:var(--cream)}
+  h1,h2,h3{line-height:1.2;font-weight:800}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .btn{display:inline-block;padding:15px 28px;border-radius:8px;font-weight:700;text-decoration:none;font-size:1.05rem;transition:transform .1s,box-shadow .1s}
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--rust);color:#fff;box-shadow:0 4px 14px rgba(180,71,31,.35)}
+  .btn-primary:hover{background:var(--rust-dark)}
+  .btn-ghost{background:transparent;color:#fff;border:2px solid #fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+  /* HEADER */
+  header{background:var(--steel);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px;flex-wrap:wrap;gap:8px}
+  .brand{font-weight:800;font-size:1.25rem;letter-spacing:.3px}
+  .brand span{color:var(--gold)}
+  .header-phone{font-weight:800;color:#fff;text-decoration:none;font-size:1.1rem;white-space:nowrap}
+  .header-phone:hover{color:var(--gold)}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,var(--steel) 0%,var(--steel-light) 60%,var(--rust-dark) 140%);color:#fff;padding:70px 0 80px;text-align:center}
+  .hero h1{font-size:2.9rem;margin-bottom:18px}
+  .hero h1 .accent{color:var(--gold)}
+  .hero p.sub{font-size:1.25rem;max-width:720px;margin:0 auto 32px;color:#e7e3dc}
+  .hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .hero .trust{margin-top:20px;font-size:1rem;color:#eaf3dd;font-weight:600}
+  .hero .trust b{color:var(--gold)}
+  .hero .area{margin-top:14px;font-size:.95rem;color:#c8c4bc;letter-spacing:.5px}
+
+  /* SECTION */
+  section{padding:64px 0}
+  .section-title{text-align:center;font-size:2rem;margin-bottom:8px}
+  .section-sub{text-align:center;color:var(--muted);max-width:640px;margin:0 auto 40px}
+  .alt{background:#fff}
+
+  /* PILLARS */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:#fff;border:1px solid #e7ded2;border-radius:12px;padding:30px 26px;box-shadow:0 3px 12px rgba(0,0,0,.05)}
+  .alt .card{background:var(--cream)}
+  .card .ico{font-size:2.4rem;margin-bottom:12px}
+  .card h3{font-size:1.3rem;margin-bottom:10px;color:var(--rust-dark)}
+  .card p{color:var(--muted)}
+
+  /* PRICING */
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.06)}
+  th,td{text-align:left;padding:14px 18px;border-bottom:1px solid #eee}
+  th{background:var(--steel);color:#fff;font-size:.95rem}
+  td.price{font-weight:800;color:var(--rust-dark);white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  .price-note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:16px}
+
+  /* WHY */
+  .why{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:860px;margin:0 auto}
+  .why div{display:flex;gap:14px;align-items:flex-start}
+  .why .e{font-size:1.6rem;flex-shrink:0}
+  .why h3{font-size:1.1rem}
+  .why p{color:var(--muted);font-size:.97rem}
+
+  /* STEPS */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+  .step .num{width:48px;height:48px;border-radius:50%;background:var(--rust);color:#fff;font-weight:800;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+  .step h3{margin-bottom:6px}
+  .step p{color:var(--muted)}
+
+  /* BOOK / CALENDAR */
+  .cal-embed{max-width:820px;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.08);background:#fff;min-height:200px}
+  .cal-embed iframe{width:100%;border:0;display:block}
+  .cal-placeholder{border:2px dashed #cdbfa8;border-radius:12px;background:var(--cream);padding:40px 24px;text-align:center;color:var(--muted);max-width:820px;margin:0 auto}
+  .cal-placeholder strong{color:var(--rust-dark)}
+
+  /* QUOTE */
+  .quote{background:var(--steel);color:#fff;text-align:center}
+  .quote .section-title{color:#fff}
+  .quote form{max-width:520px;margin:24px auto 0;text-align:left}
+  .quote label{display:block;font-weight:600;margin:14px 0 5px;font-size:.95rem}
+  .quote input,.quote textarea{width:100%;padding:12px 14px;border-radius:7px;border:none;font-size:1rem;font-family:inherit}
+  .quote textarea{min-height:90px;resize:vertical}
+  .quote .row{display:flex;gap:12px}
+  .quote .row>div{flex:1}
+  .quote button{margin-top:20px;width:100%;cursor:pointer;border:none}
+  .quote button:disabled{opacity:.6;cursor:default}
+  .quote .or{margin:22px 0 4px;color:#c8c4bc}
+  .quote .or a{color:var(--gold);font-weight:800;text-decoration:none}
+  #formResult{margin-top:16px;font-weight:700;min-height:1.4em}
+  #formResult.ok{color:#7fd17f}
+  #formResult.err{color:#ff9b8a}
+
+  /* FOOTER */
+  footer{background:#0f2410;color:#c8c4bc;text-align:center;padding:40px 0;font-size:.95rem}
+  footer .brand-f{color:#fff;font-weight:800;font-size:1.2rem;margin-bottom:8px}
+  footer .brand-f span{color:var(--gold)}
+  footer a{color:var(--gold);text-decoration:none;font-weight:700}
+  footer .pay{margin-top:10px;font-size:.88rem;color:#8a8f96}
+
+  /* MOBILE STICKY CALL BAR */
+  .sticky-call{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--rust);color:#fff;text-align:center;padding:14px;font-weight:800;font-size:1.1rem;text-decoration:none;box-shadow:0 -2px 12px rgba(0,0,0,.3)}
+
+  @media(max-width:780px){
+    .hero h1{font-size:2.1rem}
+    .hero p.sub{font-size:1.1rem}
+    .cards,.steps{grid-template-columns:1fr}
+    .why{grid-template-columns:1fr}
+    .header-phone{display:none}
+    body{padding-bottom:56px}
+    .sticky-call{display:block}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">RUST &amp; ROLL <span>HAULING</span></div>
+    <a class="header-phone" href="tel:7604106887">📞 (760) 410-6887</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="padding-top:70px">
+  <div class="wrap">
+    <h1>We Haul It All — Junk, <span class="accent">Dead Cars</span> &amp; Equipment</h1>
+    <p class="sub">One call, one truck, one flat price. Appliances, furniture, garage cleanouts, that non-running car in the driveway, and light equipment moves — same week, no mystery pricing.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="sms:7604106887">Text for a Quote</a>
+      <a class="btn btn-ghost" href="tel:7604106887">Call (760) 410-6887</a>
+    </div>
+    <div class="trust"><b>✓</b> Same-week service &nbsp; <b>✓</b> Flat rates, no hidden fees &nbsp; <b>✓</b> Free quotes</div>
+    <div class="area">Serving Vista · Oceanside · Carlsbad · Escondido · Encinitas · San Marcos</div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title">What We Haul</h2>
+    <p class="section-sub">Three jobs, one phone number. Most folks need two of these at once — we handle all three.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="ico">🗑️</div>
+        <h3>Junk &amp; Trash Removal</h3>
+        <p>Appliances, furniture, mattresses, yard debris, garage and estate cleanouts, scrap metal, light construction debris. If it's piled up and in your way, it's gone today.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🚗</div>
+        <h3>Junk &amp; Scrap Cars</h3>
+        <p>That non-running car or truck taking up the driveway? We haul it off — often <strong>free</strong> when the scrap covers it. Bring the title, we handle the rest.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🚜</div>
+        <h3>Light Equipment Hauling</h3>
+        <p>Need a mower, generator, or small machine moved across town? We load it, strap it down, and deliver it. Short-haul, flat-rate, no rental headache.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="alt">
+  <div class="wrap">
+    <h2 class="section-title">Straight-Up Flat Rates</h2>
+    <p class="section-sub">No "free estimate" runaround — here's what it costs. Final price confirmed before we touch anything. Quote first, load second.</p>
+    <table>
+      <tr><th>What you've got</th><th>Price</th></tr>
+      <tr><td>Minimum charge (one quick pickup)</td><td class="price">$75</td></tr>
+      <tr><td>Single large item (fridge, washer, couch)</td><td class="price">$75–$100</td></tr>
+      <tr><td>2–3 items</td><td class="price">$110–$160</td></tr>
+      <tr><td>Quarter load</td><td class="price">$150–$225</td></tr>
+      <tr><td>Half load</td><td class="price">$250–$350</td></tr>
+      <tr><td>Full load / cleanout</td><td class="price">$450–$550</td></tr>
+      <tr><td>Estate / property cleanout</td><td class="price">Free on-site quote</td></tr>
+      <tr><td><strong>Junk car removal</strong></td><td class="price">$0–$150*</td></tr>
+      <tr><td><strong>Light equipment move</strong> (local)</td><td class="price">$75–$125</td></tr>
+    </table>
+    <p class="price-note">$75 minimum · dump fees included · heavy materials (concrete, tile) quoted separately.<br>*Junk cars are often <strong>free</strong> — we make it on the scrap.</p>
+  </div>
+</section>
+
+<!-- WHY -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Why Folks Call Us</h2>
+    <p class="section-sub"></p>
+    <div class="why">
+      <div><div class="e">⚡</div><div><h3>Same-week, often same-day</h3><p>Text us and you'll hear back within the hour — not a dispatch queue.</p></div></div>
+      <div><div class="e">💵</div><div><h3>Flat rates, no hidden fees</h3><p>You know the price before we lift a finger. Dump fees included.</p></div></div>
+      <div><div class="e">♻️</div><div><h3>We recycle &amp; donate</h3><p>Metal and e-waste get recycled, usable goods get donated. Less in the landfill.</p></div></div>
+      <div><div class="e">📞</div><div><h3>One call does it all</h3><p>Junk, dead cars, and equipment — you don't need three different guys.</p></div></div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a class="btn btn-primary" href="sms:7604106887">Text for a Flat Quote — (760) 410-6887</a>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="alt">
+  <div class="wrap">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub"></p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Text us a photo</h3><p>Send a pic or description of what needs to go.</p></div>
+      <div class="step"><div class="num">2</div><h3>Get a flat quote</h3><p>We give you the price within the hour — no surprises.</p></div>
+      <div class="step"><div class="num">3</div><h3>We haul it</h3><p>Same week. You point, we load, it's gone. Pay when it's done — cash, Venmo, or Zelle.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK A TIME -->
+<section id="book">
+  <div class="wrap">
+    <h2 class="section-title">Book a Time Slot</h2>
+    <p class="section-sub">Pick an open time that works for you — we'll confirm and roll out.</p>
+
+    <!-- ============================================================
+         CALENDAR EMBED GOES HERE.
+         Replace the <div class="cal-placeholder">…</div> below with
+         your scheduler embed code. See SETUP.md → "Booking calendar".
+
+         Google Calendar Appointment Schedule (free, recommended):
+           <div class="cal-embed">
+             <iframe src="https://calendar.google.com/calendar/appointments/schedules/XXXXXXXX?gv=true"
+                     style="height:600px" frameborder="0"></iframe>
+           </div>
+
+         Calendly (alternative):
+           <div class="cal-embed">
+             <iframe src="https://calendly.com/your-handle/hauling"
+                     style="height:680px" frameborder="0"></iframe>
+           </div>
+         ============================================================ -->
+
+    <div class="cal-placeholder">
+      <p style="font-size:1.05rem;margin-bottom:10px">📅 <strong>Online booking calendar loads here.</strong></p>
+      <p>Until it's connected, book by text or call:</p>
+      <p style="margin-top:14px"><a class="btn btn-primary" href="sms:7604106887">Text to Book — (760) 410-6887</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote" id="quote">
+  <div class="wrap">
+    <h2 class="section-title">Get Your Free Quote</h2>
+    <p class="section-sub" style="color:#c8c4bc">Tell us what needs hauling and we'll text you a flat price — usually within the hour.</p>
+    <form id="quoteForm">
+      <!-- Web3Forms: paste your access key below (see SETUP.md). -->
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New Quote Request — Rust & Roll Hauling">
+      <input type="hidden" name="from_name" value="Rust & Roll Website">
+      <!-- honeypot spam trap -->
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required>
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" required>
+      <label for="city">City <span style="font-weight:400;color:#c8c4bc">(optional)</span></label>
+      <input id="city" name="city" type="text" placeholder="Vista, Oceanside, Carlsbad…">
+      <div class="row">
+        <div>
+          <label for="pref_date">Preferred date <span style="font-weight:400;color:#c8c4bc">(optional)</span></label>
+          <input id="pref_date" name="preferred_date" type="date">
+        </div>
+        <div>
+          <label for="pref_time">Preferred time <span style="font-weight:400;color:#c8c4bc">(optional)</span></label>
+          <input id="pref_time" name="preferred_time" type="time">
+        </div>
+      </div>
+      <label for="details">What needs hauling?</label>
+      <textarea id="details" name="details" required placeholder="e.g. old fridge + couch in the garage, or a non-running car"></textarea>
+      <button class="btn btn-primary" type="submit" id="submitBtn">Get My Flat Quote</button>
+      <div id="formResult"></div>
+    </form>
+    <p class="or">Prefer to text? <a href="sms:7604106887">(760) 410-6887</a> — fastest way to get a same-day quote.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="brand-f">RUST &amp; ROLL <span>HAULING</span></div>
+    <div>Junk Removal · Junk Cars · Equipment Hauling — North San Diego County</div>
+    <div style="margin-top:10px">
+      📞 <a href="tel:7604106887">(760) 410-6887</a> &nbsp;·&nbsp;
+      ✉️ <a href="mailto:pawnsweat2021@gmail.com">pawnsweat2021@gmail.com</a>
+    </div>
+    <div class="pay">Cash · Venmo · Zelle · Local pickup, same week · Serving Vista, Oceanside, Carlsbad, Escondido, Encinitas &amp; San Marcos</div>
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:7604106887">📞 Tap to Call — (760) 410-6887</a>
+
+<script>
+  // Emails the quote request straight to your inbox via Web3Forms (free, no backend).
+  // Setup: get a free access key at https://web3forms.com using pawnsweat2021@gmail.com,
+  // then paste it into the form's hidden "access_key" field above. See SETUP.md.
+  var form=document.getElementById('quoteForm');
+  var result=document.getElementById('formResult');
+  var btn=document.getElementById('submitBtn');
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var data=Object.fromEntries(new FormData(form));
+    var key=form.querySelector('[name=access_key]').value;
+
+    // No email backend connected yet → fall back to a pre-filled text so the lead still reaches us.
+    // (On a phone this opens the messaging app with the details ready to send.)
+    if(key.indexOf('YOUR_WEB3FORMS')!==-1){
+      var msg='Quote request — '+(data.name||'')
+        +(data.phone?(' ('+data.phone+')'):'')
+        +(data.city?(', '+data.city):'')
+        +'. '+(data.details||'')
+        +(data.preferred_date?(' Preferred: '+data.preferred_date+' '+(data.preferred_time||'')):'');
+      window.location.href='sms:7604106887?&body='+encodeURIComponent(msg.trim());
+      result.className='ok';
+      result.textContent='✓ Opening your texts with the details — just hit send and we’ll quote you within the hour.';
+      return;
+    }
+
+    btn.disabled=true; btn.textContent='Sending…';
+    result.className=''; result.textContent='';
+
+    fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify(data)
+    })
+    .then(function(r){return r.json();})
+    .then(function(json){
+      if(json.success){
+        result.className='ok';
+        result.textContent='✓ Got it! We’ll text you a flat quote shortly — usually within the hour.';
+        form.reset();
+      }else{
+        result.className='err';
+        result.textContent='Something went wrong. Please text us at (760) 410-6887.';
+      }
+    })
+    .catch(function(){
+      result.className='err';
+      result.textContent='Network error. Please text us at (760) 410-6887.';
+    })
+    .finally(function(){
+      btn.disabled=false; btn.textContent='Get My Flat Quote';
+    });
+  });
+</script>
+
+</body>
+</html>

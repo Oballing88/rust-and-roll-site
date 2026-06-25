@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oballing88.github.io/rust-and-roll-site/sitemap.xml
