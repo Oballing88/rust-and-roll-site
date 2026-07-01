@@ -14,9 +14,13 @@
 <meta property="og:title" content="Rust &amp; Roll Hauling — Junk, Dead Cars &amp; Equipment | North San Diego County">
 <meta property="og:description" content="Same-week junk removal, dead-car pickup &amp; light equipment hauling. Flat rates, no hidden fees. Text or call for a quote.">
 <meta property="og:url" content="https://oballing88.github.io/rust-and-roll-site/">
-<!-- og:image — add og-image.jpg (1200x630) once you have a truck/before-after photo, then uncomment:
-<meta property="og:image" content="https://rustandrollhauling.com/og-image.jpg"> -->
+<!-- Share thumbnail (1200x630). Repoint to the custom domain if/when you buy one (see SETUP.md). -->
+<meta property="og:image" content="https://oballing88.github.io/rust-and-roll-site/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Rust & Roll Hauling — junk removal, dead cars & equipment hauling in North San Diego County. (760) 410-6887.">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://oballing88.github.io/rust-and-roll-site/og-image.png">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -36,6 +40,21 @@
   ]
 }
 </script>
+<!-- REVIEW SCHEMA — uncomment ONLY when the "What Customers Say" section has REAL reviews.
+     Fake ratings violate Google's policy and can get the whole site demoted. Match ratingCount/
+     reviews to what you actually show on the page.
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"Rust & Roll Hauling",
+  "url":"https://oballing88.github.io/rust-and-roll-site/",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"3"},
+  "review":[
+    {"@type":"Review","author":{"@type":"Person","name":"First name"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Real review text."}
+  ]
+}
+</script> -->
 <style>
   /* Waste-management palette: forest green → yellow.
      Variable names kept for stability; values repointed.
@@ -286,6 +305,57 @@
     </div>
   </div>
 </section>
+
+<!-- ============================================================
+     SOCIAL PROOF (reviews + before/after) — INTENTIONALLY HIDDEN until you have REAL content.
+     Per the conversion playbook: an empty proof block looks worse than none, and fake reviews/
+     stock photos destroy trust. Both templates below are commented out. Activate ONLY with real
+     jobs/reviews — uncomment the block, fill it in, re-deploy. Placed here on purpose: proof sits
+     directly above the quote form (reviews near a CTA tested at a 68% lift).
+
+     ==== (A) RECENT HAULS — before/after photos ====
+     Drop 2-3 real job photos into the Website folder (e.g. haul1-before.jpg / haul1-after.jpg),
+     keep them ~1200px wide and compressed, then uncomment:
+
+<section class="alt">
+  <div class="wrap">
+    <h2 class="section-title">Recent Hauls</h2>
+    <p class="section-sub">Real driveways, real loads — before and after.</p>
+    <div class="cards">
+      <div class="card" style="padding:0;overflow:hidden">
+        <img src="haul1-before.jpg" alt="Garage full of junk before Rust & Roll hauled it" loading="lazy" style="width:100%;display:block">
+        <img src="haul1-after.jpg" alt="Same garage cleared out and swept" loading="lazy" style="width:100%;display:block">
+        <p style="padding:14px 18px">Garage cleanout in Vista — gone same week.</p>
+      </div>
+      (duplicate the .card above for haul2, haul3… then delete this note)
+    </div>
+  </div>
+</section>
+
+     ==== (B) WHAT CUSTOMERS SAY — reviews ====
+     Use ONLY real reviews (Google / Facebook / a text a customer sent you, with permission).
+     Replace the names/quotes, then uncomment. Also uncomment the matching Review JSON-LD at the
+     bottom of <head> (search "REVIEW SCHEMA") so the stars can show in search results — but only
+     once these are real, or Google penalizes it.
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">What Customers Say</h2>
+    <p class="section-sub">★★★★★ from your North County neighbors.</p>
+    <div class="cards">
+      <div class="card">
+        <p style="font-size:1.4rem;color:var(--gold)">★★★★★</p>
+        <p>"REAL customer quote here — what they needed hauled and how it went."</p>
+        <p style="margin-top:10px;font-weight:700;color:var(--rust-dark)">— First name, City</p>
+      </div>
+      (duplicate the .card above for 2-3 real reviews, then delete this note)
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a class="btn btn-primary" href="sms:7604106887">Text for a Flat Quote — (760) 410-6887</a>
+    </div>
+  </div>
+</section>
+     ============================================================ -->
 
 <!-- QUOTE -->
 <section class="quote" id="quote">
