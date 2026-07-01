@@ -388,6 +388,9 @@
       </div>
       <label for="details">What needs hauling?</label>
       <textarea id="details" name="details" required placeholder="e.g. old fridge + couch in the garage, or a non-running car"></textarea>
+      <!-- hCaptcha (free tier) — also enable "hCaptcha" on this form in the Web3Forms
+           dashboard, or direct-to-API spam can still bypass the widget. -->
+      <div class="h-captcha" data-captcha="true" data-theme="dark" style="margin:14px 0"></div>
       <button class="btn btn-primary" type="submit" id="submitBtn">Get My Flat Quote</button>
       <div id="formResult"></div>
     </form>
@@ -437,6 +440,13 @@
       return;
     }
 
+    // hCaptcha must be solved before we send (FormData picks the token up automatically).
+    if(!data['h-captcha-response']){
+      result.className='err';
+      result.textContent='Please check the "I am human" box above, then resubmit.';
+      return;
+    }
+
     btn.disabled=true; btn.textContent='Sending…';
     result.className=''; result.textContent='';
 
@@ -451,6 +461,7 @@
         result.className='ok';
         result.textContent='✓ Got it! We’ll text you a flat quote shortly — usually within the hour.';
         form.reset();
+        if(window.hcaptcha)hcaptcha.reset();
       }else{
         result.className='err';
         result.textContent='Something went wrong. Please text us at (760) 410-6887.';
@@ -465,6 +476,8 @@
     });
   });
 </script>
+<!-- Web3Forms client script — renders the hCaptcha widget above. -->
+<script src="https://web3forms.com/client/script.js" async defer></script>
 
 </body>
 </html>
