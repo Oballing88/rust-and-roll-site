@@ -154,6 +154,18 @@
   #formResult.ok{color:#7fd17f}
   #formResult.err{color:#ff9b8a}
 
+  /* QUICK-READ ASSISTANT (rule-based, runs entirely in the browser — no API, no tracking) */
+  .assist{display:none;margin-top:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 14px;text-align:left}
+  .assist.on{display:block}
+  .assist-head{font-size:.85rem;font-weight:700;color:var(--gold);letter-spacing:.5px;margin-bottom:8px}
+  .assist-bubble{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px;animation:bubbleIn .25s ease}
+  .assist-bubble:last-child{margin-bottom:0}
+  .assist-bubble .who{flex-shrink:0;font-size:1.05rem;line-height:1.4}
+  .assist-bubble p{background:var(--cream);color:var(--text);border-radius:4px 12px 12px 12px;padding:8px 12px;font-size:.92rem;line-height:1.45;margin:0}
+  .assist-bubble p b{color:var(--rust-dark)}
+  .assist-note{font-size:.78rem;color:#c8c4bc;margin-top:8px}
+  @keyframes bubbleIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
   /* FAQ */
   .faq{max-width:760px;margin:0 auto}
   .faq details{background:var(--cream);border:1px solid #e7ded2;border-radius:10px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
@@ -431,6 +443,17 @@
       </div>
       <label for="details">What needs hauling?</label>
       <textarea id="details" name="details" required placeholder="e.g. old fridge + couch in the garage, or a non-running car"></textarea>
+
+      <!-- Quick-read assistant: instant ballpark from the published price sheet while they type.
+           Pure in-page rules — no AI, no external calls. Its summary also rides along in the
+           lead email via the hidden fields below. -->
+      <div class="assist" id="assist" aria-live="polite">
+        <div class="assist-head">🚛 QUICK READ — INSTANT BALLPARK</div>
+        <div id="assistBody"></div>
+        <div class="assist-note">Ballpark from our published rates — the owner confirms your exact flat price before we touch anything.</div>
+      </div>
+      <input type="hidden" name="lead_analysis" id="leadAnalysis">
+      <input type="hidden" name="lead_priority" id="leadPriority">
       <!-- hCaptcha (free tier) — also enable "hCaptcha" on this form in the Web3Forms
            dashboard, or direct-to-API spam can still bypass the widget. -->
       <div class="h-captcha" data-captcha="true" data-theme="dark" style="margin:14px 0"></div>
@@ -457,6 +480,127 @@
 <a class="sticky-call" href="tel:7604106887">📞 Tap to Call — (760) 410-6887</a>
 
 <script>
+  // ---------- QUICK-READ ASSISTANT ----------
+  // Deterministic rules against the published price sheet. Runs 100% in the browser:
+  // no API calls, no key, no tracking. It NEVER commits a price — ranges only, owner
+  // confirms. Conclusions also ride along in the lead email (hidden fields) so the
+  // inbox copy arrives pre-analyzed.
+  var assistBox=document.getElementById('assist');
+  var assistBody=document.getElementById('assistBody');
+  var detailsEl=document.getElementById('details');
+  var cityEl=document.getElementById('city');
+
+  var TOWNS=['vista','oceanside','carlsbad','escondido','encinitas','san marcos'];
+  var ITEM_WORDS=/fridge|refrigerator|freezer|washer|dryer|couch|sofa|sectional|mattress|box\s*spring|bed\b|dresser|table|desk|tv\b|television|stove|oven|dishwasher|recliner|chair|bookshelf|cabinet|treadmill|elliptical|grill|water\s*heater|appliance|furniture/g;
+
+  function analyze(){
+    var d=(detailsEl.value||'').toLowerCase();
+    var city=(cityEl.value||'').toLowerCase().trim();
+    var out=[];        // visitor-facing bubbles (may contain <b>)
+    var summary=[];    // plain-text conclusions for the lead email
+    var priority='normal';
+
+    if(d.replace(/\s/g,'').length<8){render([]);return {summary:'',priority:priority};}
+
+    // 1. Hazardous waste — the one hard no.
+    if(/paint|chemical|asbestos|propane|gas\s*tank|motor\s*oil|pesticide/.test(d)){
+      out.push("Heads up: we can't take <b>hazardous waste</b> (paint, chemicals, asbestos). Everything else on your list is fair game.");
+      summary.push('HAZMAT mentioned - partial decline');
+    }
+
+    // 2. Junk / scrap car.
+    if(/\b(car|truck|van|suv|vehicle|auto|sedan|pickup)\b/.test(d) && !/car\s*seat|truck\s*load|truckload/.test(d)){
+      out.push("Non-running car or truck? Those run <b>$0–$150</b> — often <b>free</b>, because the scrap usually covers the tow.");
+      if(/no\s*title|lost\s*(the\s*)?title|can'?t\s*find\s*(the\s*)?title|missing\s*title/.test(d)){
+        out.push("Lost title? Usually still fine — if you're the registered owner with no lien, California's <b>REG 227</b> form replaces it. We'll walk you through it.");
+        summary.push('JUNK CAR - LOST TITLE (REG 227 path)');
+      }else{
+        out.push("Have the <b>title</b> handy (or we'll help sort it) and we handle the rest.");
+        summary.push('JUNK CAR - est $0-150');
+      }
+      priority='high';
+    }
+
+    // 3. Heavy materials — quoted separately.
+    if(/concrete|brick|tile|gravel|rock|sand|asphalt|\bdirt\b|\bsod\b/.test(d)){
+      out.push("Heavy material like <b>concrete, tile, or dirt</b> gets quoted separately by weight — text a photo of the pile and we'll price it straight.");
+      summary.push('HEAVY MATERIALS - separate quote');
+    }
+
+    // 4. Equipment move.
+    if(/mower|generator|tractor|welder|compressor|small\s*machine|equipment/.test(d)){
+      out.push("Local <b>equipment move</b> (mower, generator, small machine): <b>$75–$125</b> flat.");
+      summary.push('EQUIPMENT MOVE - est $75-125');
+    }
+
+    // 5. Cleanouts and load-size words.
+    if(/estate|whole\s*house|eviction|hoard/.test(d)){
+      out.push("<b>Estate / whole-property cleanout</b> — we do those on a <b>free on-site quote</b>. Pick a time below and we'll come look, no obligation.");
+      summary.push('ESTATE/PROPERTY CLEANOUT - onsite quote');
+      priority='high';
+    }else if(/clean\s*out|cleanout|garage\s*(full|packed)|storage\s*unit|full\s*load|truckload|truck\s*load|trailer\s*load/.test(d)){
+      out.push("Sounds like a <b>full load / cleanout</b>: typically <b>$450–$550</b>, dump fees included.");
+      summary.push('FULL LOAD/CLEANOUT - est $450-550');
+      priority='high';
+    }else if(/half\s*(a\s*)?(load|trailer|truck)/.test(d)){
+      out.push("A <b>half load</b> usually runs <b>$250–$350</b>, dump fees included.");
+      summary.push('HALF LOAD - est $250-350');
+    }else if(/quarter\s*(load)?|\bfew\s*(bags|boxes)/.test(d)){
+      out.push("A <b>quarter load</b> usually runs <b>$150–$225</b>, dump fees included.");
+      summary.push('QUARTER LOAD - est $150-225');
+    }else{
+      // 6. Count recognizable items if no load-size word matched.
+      var items=(d.match(ITEM_WORDS)||[]).length;
+      if(/\b(2|two|3|three|couple|few)\b/.test(d) && items>0) items=Math.max(items,2);
+      if(items===1){
+        out.push("A <b>single large item</b> (fridge, couch, washer) runs <b>$75–$100</b> flat, dump fees included.");
+        summary.push('SINGLE ITEM - est $75-100');
+      }else if(items>=2&&items<=3){
+        out.push("<b>2–3 items</b> usually runs <b>$110–$160</b> flat, dump fees included.");
+        summary.push('2-3 ITEMS - est $110-160');
+      }else if(items>3){
+        out.push("That's a solid pile — likely a <b>quarter to half load</b>, <b>$150–$350</b>. A photo gets you the exact flat price fastest.");
+        summary.push('4+ ITEMS - est $150-350 (photo requested)');
+      }
+    }
+
+    // 7. Licensed/insured question — never claimed by the page.
+    if(/licens|insured|insurance|bonded/.test(d)){
+      out.push("That one's for the owner — he'll answer it directly when he texts your quote.");
+      summary.push('ASKED LICENSED/INSURED - owner must answer');
+    }
+
+    // 8. Service-area check.
+    if(city){
+      var known=TOWNS.some(function(t){return city.indexOf(t)!==-1;});
+      if(known){out.push("✓ <b>"+cityEl.value.trim()+"</b> is right in our service area.");}
+      else{out.push("A little outside our usual towns? Send it anyway — short trips usually work.");summary.push('CITY OUTSIDE CORE AREA: '+cityEl.value.trim());}
+    }
+
+    // 9. Nothing matched but they wrote something → fastest path.
+    if(out.length===0){
+      out.push("Easiest way to a flat price: <b>text a photo</b> to <b>(760) 410-6887</b> — quotes usually come back within the hour.");
+      summary.push('NO RULE MATCH - photo requested');
+    }
+
+    render(out);
+    return {summary:summary.join(' | '),priority:priority};
+  }
+
+  function render(bubbles){
+    if(bubbles.length===0){assistBox.className='assist';assistBody.innerHTML='';return;}
+    assistBody.innerHTML=bubbles.map(function(b){
+      return '<div class="assist-bubble"><span class="who">🚛</span><p>'+b+'</p></div>';
+    }).join('');
+    assistBox.className='assist on';
+  }
+
+  var assistTimer=null;
+  function queueAnalyze(){clearTimeout(assistTimer);assistTimer=setTimeout(analyze,450);}
+  detailsEl.addEventListener('input',queueAnalyze);
+  cityEl.addEventListener('input',queueAnalyze);
+
+  // ---------- FORM SUBMIT ----------
   // Emails the quote request straight to your inbox via Web3Forms (free, no backend).
   // Setup: get a free access key at https://web3forms.com using pawnsweat2021@gmail.com,
   // then paste it into the form's hidden "access_key" field above. See SETUP.md.
@@ -466,6 +610,10 @@
 
   form.addEventListener('submit',function(e){
     e.preventDefault();
+    // Pack the quick-read conclusions into the lead email so it arrives pre-analyzed.
+    var a=analyze();
+    document.getElementById('leadAnalysis').value=a.summary||'(no rule match)';
+    document.getElementById('leadPriority').value=a.priority;
     var data=Object.fromEntries(new FormData(form));
     var key=form.querySelector('[name=access_key]').value;
 
@@ -504,6 +652,7 @@
         result.className='ok';
         result.textContent='✓ Got it! We’ll text you a flat quote shortly — usually within the hour.';
         form.reset();
+        render([]);
         if(window.hcaptcha)hcaptcha.reset();
       }else{
         result.className='err';
