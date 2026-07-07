@@ -164,6 +164,8 @@
   .assist-bubble p{background:var(--cream);color:var(--text);border-radius:4px 12px 12px 12px;padding:8px 12px;font-size:.92rem;line-height:1.45;margin:0}
   .assist-bubble p b{color:var(--rust-dark)}
   .assist-note{font-size:.78rem;color:#c8c4bc;margin-top:8px}
+  .photo-cta{margin-top:12px;background:rgba(255,255,255,.07);border:1px dashed rgba(255,255,255,.3);border-radius:10px;padding:12px 14px;text-align:left;font-size:.95rem;color:#c8c4bc}
+  .photo-cta a{color:var(--gold);font-weight:800;text-decoration:none;white-space:nowrap}
   @keyframes bubbleIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 
   /* FAQ */
@@ -444,6 +446,11 @@
       <label for="details">What needs hauling?</label>
       <textarea id="details" name="details" required placeholder="e.g. old fridge + couch in the garage, or a non-running car"></textarea>
 
+      <!-- Photo path: SMS/MMS to the business line. Deliberately NOT a file upload —
+           the form backend (Web3Forms free) can't attach files, and an unsigned
+           image-host upload would expose an abusable public preset. -->
+      <div class="photo-cta">📸 <strong>Got a photo?</strong> A picture beats a paragraph — <a href="sms:7604106887?&amp;body=Hi%20Rust%20%26%20Roll%2C%20here%27s%20a%20photo%20of%20what%20needs%20hauling%3A%20">text it to (760) 410-6887</a> and we'll ballpark it fast.</div>
+
       <!-- Quick-read assistant: instant ballpark from the published price sheet while they type.
            Pure in-page rules — no AI, no external calls. Its summary also rides along in the
            lead email via the hidden fields below. -->
@@ -460,7 +467,7 @@
       <button class="btn btn-primary" type="submit" id="submitBtn">Get My Flat Quote</button>
       <div id="formResult"></div>
     </form>
-    <p class="or">Prefer to text? <a href="sms:7604106887">(760) 410-6887</a> — fastest way to get a same-day quote.</p>
+    <p class="or">Prefer to text? <a href="sms:7604106887">(760) 410-6887</a> — send a photo of the pile for the fastest same-day quote.</p>
   </div>
 </section>
 
