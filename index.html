@@ -1,1025 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rust &amp; Roll Hauling | Junk Removal, Junk Cars &amp; Equipment Hauling — North San Diego County</title>
-<meta name="description" content="Same-week junk removal, dead-car pickup, and light equipment hauling in Vista, Oceanside, Carlsbad &amp; North County. Flat rates, no hidden fees. Text or call for a quote today.">
-<meta name="theme-color" content="#173d1a">
-<!-- Update these two URLs if you use the netlify subdomain instead of a custom domain (see SETUP.md). -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Junk Removal &amp; Hauling in Vista, CA | Rust &amp; Roll Hauling</title>
+<meta name="description" content="Rust &amp; Roll Hauling: junk removal, non-running junk car pickup and light equipment hauling in Vista and North San Diego County. Call or text (760) 410-6887 for a quote.">
+<!-- PLACEHOLDER: update canonical/og:url if a custom domain is used -->
 <link rel="canonical" href="https://oballing88.github.io/rust-and-roll-site/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23173d1a'/><text x='32' y='44' font-size='26' font-family='Arial' font-weight='bold' fill='%23f4c20d' text-anchor='middle'>R%26R</text></svg>">
-<!-- Open Graph / social share preview (Facebook, Nextdoor, Marketplace, texts) -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Rust &amp; Roll Hauling — Junk, Dead Cars &amp; Equipment | North San Diego County">
-<meta property="og:description" content="Same-week junk removal, dead-car pickup &amp; light equipment hauling. Flat rates, no hidden fees. Text or call for a quote.">
+<meta property="og:title" content="Rust &amp; Roll Hauling | Junk Removal in Vista, CA">
+<meta property="og:description" content="Junk removal, junk car pickup and light equipment hauling across North San Diego County. Call or text (760) 410-6887.">
 <meta property="og:url" content="https://oballing88.github.io/rust-and-roll-site/">
-<!-- Share thumbnail (1200x630). Repoint to the custom domain if/when you buy one (see SETUP.md). -->
-<meta property="og:image" content="https://oballing88.github.io/rust-and-roll-site/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Rust & Roll Hauling — junk removal, dead cars & equipment hauling in North San Diego County. (760) 410-6887.">
+<meta property="og:image" content="https://oballing88.github.io/rust-and-roll-site/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://oballing88.github.io/rust-and-roll-site/og-image.png">
+<meta name="theme-color" content="#1b1f23">
+<link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "name":"Rust & Roll Hauling",
-  "telephone":"+1-760-410-6887",
-  "email":"pawnsweat2021@gmail.com",
-  "url":"https://oballing88.github.io/rust-and-roll-site/",
-  "description":"Same-week junk removal, non-running junk car pickup, and light equipment hauling in North San Diego County. Flat rates, no hidden fees.",
-  "priceRange":"$$",
-  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"06:00","closes":"19:00"}],
-  "areaServed":[{"@type":"City","name":"Vista"},{"@type":"City","name":"Oceanside"},{"@type":"City","name":"Carlsbad"},{"@type":"City","name":"Escondido"},{"@type":"City","name":"Encinitas"},{"@type":"City","name":"San Marcos"}],
-  "makesOffer":[
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Junk & Trash Removal"}},
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Junk & Scrap Car Removal"}},
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Light Equipment Hauling"}}
-  ]
-}
+{"@context":"https://schema.org","@type":"MovingCompany","name":"Rust & Roll Hauling",
+"url":"https://oballing88.github.io/rust-and-roll-site/","telephone":"+1-760-410-6887","email":"pawnsweat2021@gmail.com",
+"image":"https://oballing88.github.io/rust-and-roll-site/img/og-image.png",
+"founder":{"@type":"Person","name":"Oscar Correa"},"priceRange":"$75-$550",
+"address":{"@type":"PostalAddress","addressLocality":"Vista","addressRegion":"CA","addressCountry":"US"},
+"areaServed":["Vista, CA","Oceanside, CA","Carlsbad, CA","Escondido, CA","Encinitas, CA","San Marcos, CA"],
+"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"06:00","closes":"19:00"},
+"paymentAccepted":"Cash, Venmo, Zelle"}
 </script>
-<!-- REVIEW SCHEMA — uncomment ONLY when the "What Customers Say" section has REAL reviews.
-     Fake ratings violate Google's policy and can get the whole site demoted. Match ratingCount/
-     reviews to what you actually show on the page.
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "name":"Rust & Roll Hauling",
-  "url":"https://oballing88.github.io/rust-and-roll-site/",
-  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"3"},
-  "review":[
-    {"@type":"Review","author":{"@type":"Person","name":"First name"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Real review text."}
-  ]
-}
-</script> -->
-<style>
-  /* Waste-management palette: forest green → yellow.
-     Variable names kept for stability; values repointed.
-       --rust*  = green (primary buttons, pills, accents)
-       --steel* = deep forest (header/hero/quote/footer base)
-       --gold   = yellow accent */
-  :root{
-    --rust:#2e7d32; --rust-dark:#1e5a22; --steel:#173d1a; --steel-light:#234e26;
-    --cream:#f3f7ec; --gold:#f4c20d; --text:#17210f; --muted:#5b6453;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--text);line-height:1.6;background:var(--cream)}
-  h1,h2,h3{line-height:1.2;font-weight:800}
-  a{color:inherit}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-  .btn{display:inline-block;padding:15px 28px;border-radius:8px;font-weight:700;text-decoration:none;font-size:1.05rem;transition:transform .1s,box-shadow .1s}
-  .btn:active{transform:translateY(1px)}
-  .btn-primary{background:var(--rust);color:#fff;box-shadow:0 4px 14px rgba(180,71,31,.35)}
-  .btn-primary:hover{background:var(--rust-dark)}
-  .btn-ghost{background:transparent;color:#fff;border:2px solid #fff}
-  .btn-ghost:hover{background:rgba(255,255,255,.12)}
-
-  /* HEADER */
-  header{background:var(--steel);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.25)}
-  header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px;flex-wrap:wrap;gap:8px}
-  .brand{font-weight:800;font-size:1.25rem;letter-spacing:.3px}
-  .brand span{color:var(--gold)}
-  .header-phone{font-weight:800;color:#fff;text-decoration:none;font-size:1.1rem;white-space:nowrap}
-  .header-phone:hover{color:var(--gold)}
-
-  /* HERO */
-  .hero{position:relative;overflow:hidden;display:flex;align-items:center;min-height:min(78vh,680px);background:linear-gradient(135deg,var(--steel) 0%,var(--steel-light) 60%,var(--rust-dark) 140%);color:#fff;padding:70px 0 80px;text-align:center}
-  .hero .wrap{position:relative;z-index:3;width:100%}
-  .hero h1{font-size:2.9rem;margin-bottom:18px;text-shadow:0 2px 18px rgba(0,0,0,.45)}
-  .hero h1 .accent{color:var(--gold)}
-  .hero p.sub{font-size:1.25rem;max-width:720px;margin:0 auto 32px;color:#f0efe8;text-shadow:0 1px 10px rgba(0,0,0,.55)}
-  .hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-  .hero .trust{margin-top:20px;font-size:1rem;color:#eaf3dd;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.6)}
-  .hero .trust b{color:var(--gold)}
-  .hero .area{margin-top:14px;font-size:.95rem;color:#d8d5cc;letter-spacing:.5px;text-shadow:0 1px 8px rgba(0,0,0,.6)}
-
-  /* HERO FILM — 3-act background ad: satellite view → crew on site → junk gone.
-     Pure inline SVG + CSS transforms. No images, no JS, no extra requests. 18s loop. */
-  .film{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-  .film-layer{position:absolute;inset:0;will-change:transform,opacity}
-  .film-layer svg{width:100%;height:100%;display:block}
-  .film-aerial{transform-origin:51% 65%;animation:filmAerial 18s ease-in-out infinite}
-  .film-site{opacity:0;transform-origin:50% 74%;animation:filmSite 18s ease-in-out infinite}
-  /* Just enough scrim to hold white text at AA — the film has to stay readable. */
-  .film-scrim{position:absolute;inset:0;z-index:2;background:
-    radial-gradient(62% 50% at 50% 44%,rgba(9,24,10,.72) 0%,rgba(9,24,10,.34) 62%,rgba(9,24,10,0) 100%),
-    linear-gradient(180deg,rgba(12,30,13,.5) 0%,rgba(12,30,13,.2) 38%,rgba(12,30,13,.34) 72%,rgba(12,30,13,.66) 100%)}
-
-  @keyframes filmAerial{
-    0%{opacity:1;transform:scale(1)}
-    8%{opacity:1;transform:scale(1.07)}
-    20%{opacity:1;transform:scale(1.95)}
-    27%{opacity:0;transform:scale(2.9)}
-    90%{opacity:0;transform:scale(3.3)}
-    91%{opacity:0;transform:scale(1)}
-    100%{opacity:1;transform:scale(1)}}
-  @keyframes filmSite{
-    0%{opacity:0;transform:scale(1.45)}
-    18%{opacity:0;transform:scale(1.3)}
-    27%{opacity:1;transform:scale(1.12)}
-    40%{opacity:1;transform:scale(1)}
-    86%{opacity:1;transform:scale(1.04)}
-    92%{opacity:0;transform:scale(1.08)}
-    93%,100%{opacity:0;transform:scale(1.45)}}
-
-  /* the junk lifts out; the truck bed fills at the same moment */
-  .junk{transform-box:fill-box;transform-origin:50% 100%;animation:junkGo 18s ease-in-out infinite}
-  .junk:nth-of-type(2){animation-delay:.15s}
-  .junk:nth-of-type(3){animation-delay:.3s}
-  .junk:nth-of-type(4){animation-delay:.45s}
-  .junk:nth-of-type(5){animation-delay:.6s}
-  @keyframes junkGo{
-    0%,52%{opacity:1;transform:translateY(0) scale(1)}
-    58%{opacity:0;transform:translateY(-22px) scale(.8)}
-    93%{opacity:0;transform:translateY(-22px) scale(.8)}
-    94%,100%{opacity:1;transform:translateY(0) scale(1)}}
-  .loaded{opacity:0;transform-box:fill-box;transform-origin:50% 100%;animation:loadIn 18s ease-in-out infinite}
-  @keyframes loadIn{
-    0%,54%{opacity:0;transform:translateY(16px)}
-    61%,90%{opacity:1;transform:translateY(0)}
-    93%,100%{opacity:0;transform:translateY(16px)}}
-  .sparkle{opacity:0;transform-box:fill-box;transform-origin:50% 50%;animation:sparkIn 18s ease-in-out infinite}
-  .sparkle:nth-of-type(2){animation-delay:.35s}
-  .sparkle:nth-of-type(3){animation-delay:.7s}
-  .sparkle:nth-of-type(4){animation-delay:1.05s}
-  @keyframes sparkIn{
-    0%,58%{opacity:0;transform:scale(.4)}
-    64%{opacity:1;transform:scale(1)}
-    72%{opacity:.55;transform:scale(.85)}
-    80%{opacity:1;transform:scale(1)}
-    88%{opacity:0;transform:scale(.4)}
-    100%{opacity:0;transform:scale(.4)}}
-  .lift{transform-box:fill-box;animation:lift 2.6s ease-in-out infinite}
-  @keyframes lift{0%,55%,100%{transform:translateY(0)}28%{transform:translateY(-7px)}}
-  .arm-down{animation:armDown 18s steps(1) infinite}
-  .arm-up-a,.arm-up-b{opacity:0}
-  .arm-up-a{animation:armUpA 18s steps(1) infinite}
-  .arm-up-b{animation:armUpB 18s steps(1) infinite}
-  @keyframes armDown{0%{opacity:1}56%{opacity:0}92%{opacity:1}100%{opacity:1}}
-  @keyframes armUpA{0%{opacity:0}56%{opacity:1}60%{opacity:0}64%{opacity:1}68%{opacity:0}72%{opacity:1}92%{opacity:0}100%{opacity:0}}
-  @keyframes armUpB{0%{opacity:0}60%{opacity:1}64%{opacity:0}68%{opacity:1}72%{opacity:0}100%{opacity:0}}
-
-  /* narration chips — the "ad" beat under the CTAs */
-  .film-cap{position:absolute;left:0;right:0;bottom:20px;z-index:4;height:1.2em;pointer-events:none;
-    font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#f2f6e8;text-shadow:0 1px 10px rgba(0,0,0,.75)}
-  .film-cap span{position:absolute;left:0;right:0;opacity:0}
-  .film-cap .c1{animation:cap1 18s ease-in-out infinite}
-  .film-cap .c2{animation:cap2 18s ease-in-out infinite}
-  .film-cap .c3{animation:cap3 18s ease-in-out infinite}
-  @keyframes cap1{0%,2%{opacity:0}7%,19%{opacity:1}24%,100%{opacity:0}}
-  @keyframes cap2{0%,29%{opacity:0}34%,48%{opacity:1}53%,100%{opacity:0}}
-  @keyframes cap3{0%,61%{opacity:0}66%,85%{opacity:1}90%,100%{opacity:0}}
-
-  @media(prefers-reduced-motion:reduce){
-    .film-aerial{display:none}
-    .film-site{opacity:1;transform:none;animation:none}
-    .junk,.lift,.arm-down,.arm-up-a,.arm-up-b{animation:none}
-    .junk,.arm-down,.arm-up-b{opacity:0}
-    .loaded,.sparkle,.arm-up-a{opacity:1;transform:none;animation:none}
-    .film-cap span{animation:none}
-    .film-cap .c3{opacity:1}
-  }
-
-  /* SECTION */
-  section{padding:64px 0}
-  .section-title{text-align:center;font-size:2rem;margin-bottom:8px}
-  .section-sub{text-align:center;color:var(--muted);max-width:640px;margin:0 auto 40px}
-  .alt{background:#fff}
-
-  /* PILLARS */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .card{background:#fff;border:1px solid #e7ded2;border-radius:12px;padding:30px 26px;box-shadow:0 3px 12px rgba(0,0,0,.05)}
-  .alt .card{background:var(--cream)}
-  .card .ico{font-size:2.4rem;margin-bottom:12px}
-  .card h3{font-size:1.3rem;margin-bottom:10px;color:var(--rust-dark)}
-  .card p{color:var(--muted)}
-
-  /* PRICING */
-  table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.06)}
-  th,td{text-align:left;padding:14px 18px;border-bottom:1px solid #eee}
-  th{background:var(--steel);color:#fff;font-size:.95rem}
-  td.price{font-weight:800;color:var(--rust-dark);white-space:nowrap}
-  tr:last-child td{border-bottom:none}
-  .price-note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:16px}
-
-  /* WHY */
-  .why{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:860px;margin:0 auto}
-  .why div{display:flex;gap:14px;align-items:flex-start}
-  .why .e{font-size:1.6rem;flex-shrink:0}
-  .why h3{font-size:1.1rem}
-  .why p{color:var(--muted);font-size:.97rem}
-
-  /* STEPS */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
-  .step .num{width:48px;height:48px;border-radius:50%;background:var(--rust);color:#fff;font-weight:800;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
-  .step h3{margin-bottom:6px}
-  .step p{color:var(--muted)}
-
-  /* BOOK / CALENDAR */
-  .cal-embed{max-width:820px;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.08);background:#fff;min-height:200px}
-  .cal-embed iframe{width:100%;border:0;display:block}
-  .cal-placeholder{border:2px dashed #cdbfa8;border-radius:12px;background:var(--cream);padding:40px 24px;text-align:center;color:var(--muted);max-width:820px;margin:0 auto}
-  .cal-placeholder strong{color:var(--rust-dark)}
-
-  /* QUOTE */
-  .quote{background:var(--steel);color:#fff;text-align:center}
-  .quote .section-title{color:#fff}
-  .quote form{max-width:520px;margin:24px auto 0;text-align:left}
-  .quote label{display:block;font-weight:600;margin:14px 0 5px;font-size:.95rem}
-  .quote input,.quote textarea{width:100%;padding:12px 14px;border-radius:7px;border:none;font-size:1rem;font-family:inherit}
-  .quote textarea{min-height:90px;resize:vertical}
-  .quote .row{display:flex;gap:12px}
-  .quote .row>div{flex:1}
-  .quote button{margin-top:20px;width:100%;cursor:pointer;border:none}
-  .quote button:disabled{opacity:.6;cursor:default}
-  .quote .or{margin:22px 0 4px;color:#c8c4bc}
-  .quote .or a{color:var(--gold);font-weight:800;text-decoration:none}
-  #formResult{margin-top:16px;font-weight:700;min-height:1.4em}
-  #formResult.ok{color:#7fd17f}
-  #formResult.err{color:#ff9b8a}
-
-  /* QUICK-READ ASSISTANT (rule-based, runs entirely in the browser — no API, no tracking) */
-  .assist{display:none;margin-top:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 14px;text-align:left}
-  .assist.on{display:block}
-  .assist-head{font-size:.85rem;font-weight:700;color:var(--gold);letter-spacing:.5px;margin-bottom:8px}
-  .assist-bubble{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px;animation:bubbleIn .25s ease}
-  .assist-bubble:last-child{margin-bottom:0}
-  .assist-bubble .who{flex-shrink:0;font-size:1.05rem;line-height:1.4}
-  .assist-bubble p{background:var(--cream);color:var(--text);border-radius:4px 12px 12px 12px;padding:8px 12px;font-size:.92rem;line-height:1.45;margin:0}
-  .assist-bubble p b{color:var(--rust-dark)}
-  .assist-note{font-size:.78rem;color:#c8c4bc;margin-top:8px}
-  .photo-cta{margin-top:12px;background:rgba(255,255,255,.07);border:1px dashed rgba(255,255,255,.3);border-radius:10px;padding:12px 14px;text-align:left;font-size:.95rem;color:#c8c4bc}
-  .photo-cta a{color:var(--gold);font-weight:800;text-decoration:none;white-space:nowrap}
-  @keyframes bubbleIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
-
-  /* FAQ */
-  .faq{max-width:760px;margin:0 auto}
-  .faq details{background:var(--cream);border:1px solid #e7ded2;border-radius:10px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-  .faq summary{cursor:pointer;font-weight:700;padding:16px 18px;color:var(--rust-dark)}
-  .faq details[open] summary{border-bottom:1px solid #e7ded2}
-  .faq details p{padding:14px 18px;color:var(--muted)}
-
-  /* FOOTER */
-  footer{background:#0f2410;color:#c8c4bc;text-align:center;padding:40px 0;font-size:.95rem}
-  footer .brand-f{color:#fff;font-weight:800;font-size:1.2rem;margin-bottom:8px}
-  footer .brand-f span{color:var(--gold)}
-  footer a{color:var(--gold);text-decoration:none;font-weight:700}
-  footer .pay{margin-top:10px;font-size:.88rem;color:#8a8f96}
-
-  /* MOBILE STICKY CALL BAR */
-  .sticky-call{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--rust);color:#fff;text-align:center;padding:14px;font-weight:800;font-size:1.1rem;text-decoration:none;box-shadow:0 -2px 12px rgba(0,0,0,.3)}
-
-  @media(max-width:780px){
-    .hero{min-height:min(74vh,600px)}
-    .hero h1{font-size:2.1rem}
-    .film-cap{display:none}
-    .hero p.sub{font-size:1.1rem}
-    .cards,.steps{grid-template-columns:1fr}
-    .why{grid-template-columns:1fr}
-    .header-phone{display:none}
-    body{padding-bottom:56px}
-    .sticky-call{display:block}
-  }
-</style>
 </head>
 <body>
-
-<header>
-  <div class="wrap">
-    <div class="brand">RUST &amp; ROLL <span>HAULING</span></div>
-    <a class="header-phone" href="tel:7604106887">📞 (760) 410-6887</a>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#">Rust <span>&amp;</span> Roll <small>Hauling</small></a>
+    <nav aria-label="Main"><a href="#services">Services</a><a href="#how">How it works</a><a href="#area">Service area</a><a href="#quote">Quote</a></nav>
+    <div class="hdr-cta"><a class="btn btn-sm btn-ghost hdr-text" href="sms:+17604106887?&amp;body=Hi%20Oscar%2C%20I%20need%20a%20hauling%20quote.%20Here%27s%20a%20photo%20of%20what%20needs%20to%20go%3A">Text</a><a class="btn btn-sm" href="tel:+17604106887">Call (760) 410-6887</a></div>
   </div>
 </header>
-
-<!-- HERO -->
-<section class="hero" style="padding-top:70px">
-
-  <!-- ============================================================
-       HERO FILM (decorative, aria-hidden). Three acts on an 18s loop:
-       1. satellite view of the block, camera drops toward one driveway
-       2. ground level — two-man crew, truck, the pile
-       3. pile lifts into the truck, driveway clean
-       All vector: zero image requests, animation is opacity/transform only.
-       Swap ACT 2/3 for real before/after job photos when we have them.
-       ============================================================ -->
-  <div class="film" aria-hidden="true">
-
-    <!-- ACT 1 — aerial / satellite -->
-    <div class="film-layer film-aerial">
-      <svg viewBox="100 88 1000 500" preserveAspectRatio="xMidYMid slice" role="presentation" focusable="false">
-        <defs>
-          <symbol id="roof" viewBox="0 0 200 150" preserveAspectRatio="none">
-            <rect width="200" height="150" rx="2"/>
-            <path d="M0 75h200" stroke="rgba(0,0,0,.3)" stroke-width="5"/>
-            <rect x="7" y="7" width="186" height="136" fill="none" stroke="rgba(255,255,255,.09)" stroke-width="3"/>
-          </symbol>
-          <symbol id="tree" viewBox="0 0 60 60">
-            <circle cx="30" cy="30" r="27"/>
-            <circle cx="22" cy="22" r="15" fill="rgba(255,255,255,.13)"/>
-          </symbol>
-          <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#aeb597" stop-opacity=".22"/>
-            <stop offset=".55" stop-color="#8d9279" stop-opacity="0"/>
-            <stop offset="1" stop-color="#5f6753" stop-opacity=".5"/>
-          </linearGradient>
-        </defs>
-
-        <rect width="1200" height="675" fill="#8d9279"/>
-        <g transform="rotate(-5 600 337)">
-          <!-- lots / lawns -->
-          <g fill="#7f8f5b">
-            <rect x="-40" y="120" width="300" height="260"/><rect x="280" y="110" width="260" height="270"/>
-            <rect x="500" y="105" width="280" height="280"/><rect x="760" y="120" width="250" height="265"/>
-            <rect x="980" y="110" width="300" height="275"/>
-            <rect x="-40" y="565" width="420" height="180"/><rect x="620" y="560" width="360" height="185"/>
-          </g>
-          <g fill="#96a06f" opacity=".55">
-            <rect x="40" y="150" width="150" height="90"/><rect x="820" y="150" width="120" height="80"/>
-            <rect x="1040" y="600" width="180" height="100"/>
-          </g>
-          <!-- street + sidewalks -->
-          <rect x="-120" y="455" width="1440" height="14" fill="#c3c4ba"/>
-          <rect x="-120" y="469" width="1440" height="96" fill="#6f7370"/>
-          <rect x="-120" y="565" width="1440" height="14" fill="#c3c4ba"/>
-          <g stroke="#d8d3a8" stroke-width="4" stroke-dasharray="34 30" opacity=".7"><path d="M-120 517h1440"/></g>
-          <!-- driveways -->
-          <g fill="#b9bab1">
-            <rect x="120" y="380" width="72" height="75"/><rect x="360" y="378" width="70" height="77"/>
-            <rect x="556" y="382" width="96" height="73"/><rect x="826" y="382" width="70" height="73"/>
-            <rect x="1060" y="378" width="72" height="77"/>
-          </g>
-          <!-- house shadows (sun upper-left) -->
-          <g fill="rgba(0,0,0,.24)">
-            <rect x="92" y="262" width="182" height="126" rx="2"/><rect x="312" y="252" width="172" height="134" rx="2"/>
-            <rect x="532" y="242" width="202" height="146" rx="2"/><rect x="792" y="256" width="176" height="130" rx="2"/>
-            <rect x="1012" y="246" width="172" height="136" rx="2"/>
-            <rect x="112" y="602" width="200" height="140" rx="2"/><rect x="662" y="596" width="190" height="140" rx="2"/>
-          </g>
-          <!-- roofs -->
-          <use href="#roof" x="80" y="252" width="180" height="126" fill="#7a6f63"/>
-          <use href="#roof" x="300" y="242" width="170" height="134" fill="#6b6258"/>
-          <use href="#roof" x="520" y="232" width="200" height="146" fill="#83786a"/>
-          <use href="#roof" x="780" y="246" width="174" height="130" fill="#6f6659"/>
-          <use href="#roof" x="1000" y="236" width="170" height="136" fill="#7d7264"/>
-          <use href="#roof" x="100" y="592" width="198" height="140" fill="#726758"/>
-          <use href="#roof" x="650" y="586" width="188" height="140" fill="#7a6f63"/>
-          <!-- pool + patio in a neighbour's yard -->
-          <rect x="835" y="150" width="86" height="52" rx="8" fill="#5fa8c4"/>
-          <rect x="828" y="143" width="100" height="66" rx="10" fill="none" stroke="#cfd0c4" stroke-width="6"/>
-          <!-- parked cars -->
-          <g>
-            <rect x="128" y="392" width="56" height="30" rx="7" fill="#3e4a55"/><rect x="138" y="399" width="34" height="16" rx="4" fill="rgba(255,255,255,.2)"/>
-            <rect x="1068" y="392" width="54" height="30" rx="7" fill="#8d3f34"/><rect x="1078" y="399" width="33" height="16" rx="4" fill="rgba(255,255,255,.18)"/>
-            <rect x="255" y="492" width="62" height="32" rx="7" fill="#d9d5c8"/>
-          </g>
-          <!-- THE TARGET DRIVEWAY: R&R truck + the pile, tiny from up here -->
-          <g>
-            <rect x="592" y="386" width="34" height="66" rx="4" fill="#2e7d32"/>
-            <rect x="592" y="386" width="34" height="20" rx="4" fill="#1e5a22"/>
-            <g fill="#4a4438">
-              <rect x="636" y="392" width="16" height="13" rx="2"/><rect x="634" y="410" width="20" height="15" rx="2"/>
-              <rect x="640" y="429" width="13" height="12" rx="2"/><rect x="628" y="428" width="11" height="10" rx="2"/>
-            </g>
-            <circle cx="623" cy="404" r="4" fill="#f4c20d"/><circle cx="631" cy="418" r="4" fill="#f4c20d"/>
-          </g>
-          <!-- trees -->
-          <g fill="rgba(0,0,0,.22)">
-            <circle cx="52" cy="424" r="27"/><circle cx="486" cy="418" r="24"/><circle cx="754" cy="428" r="29"/>
-            <circle cx="978" cy="420" r="25"/><circle cx="222" cy="628" r="30"/><circle cx="1120" cy="500" r="26"/>
-            <circle cx="352" cy="180" r="24"/><circle cx="612" cy="640" r="27"/>
-          </g>
-          <g fill="#465a37">
-            <use href="#tree" x="14" y="382" width="54" height="54"/><use href="#tree" x="450" y="378" width="48" height="48"/>
-            <use href="#tree" x="712" y="384" width="58" height="58"/><use href="#tree" x="940" y="380" width="50" height="50"/>
-            <use href="#tree" x="180" y="584" width="60" height="60"/><use href="#tree" x="1080" y="458" width="52" height="52"/>
-            <use href="#tree" x="314" y="140" width="48" height="48"/><use href="#tree" x="572" y="596" width="54" height="54"/>
-          </g>
-        </g>
-        <rect width="1200" height="675" fill="url(#haze)"/>
-      </svg>
-    </div>
-
-    <!-- ACT 2 + 3 — same camera, so it reads as a true before/after -->
-    <div class="film-layer film-site">
-      <svg viewBox="0 100 1000 500" preserveAspectRatio="xMidYMid slice" role="presentation" focusable="false">
-        <defs>
-          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#8fbcd4"/><stop offset=".55" stop-color="#cfdccf"/><stop offset="1" stop-color="#eae2c8"/>
-          </linearGradient>
-          <linearGradient id="drive" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#bcb8ab"/><stop offset="1" stop-color="#9e9a8d"/>
-          </linearGradient>
-          <g id="worker">
-            <rect x="-17" y="566" width="14" height="54" rx="5" fill="#2b3140"/>
-            <rect x="3" y="566" width="14" height="54" rx="5" fill="#2b3140"/>
-            <rect x="-23" y="611" width="23" height="11" rx="4" fill="#1a1e26"/>
-            <rect x="1" y="611" width="23" height="11" rx="4" fill="#1a1e26"/>
-            <rect x="-21" y="512" width="42" height="62" rx="11" fill="#2e7d32"/>
-            <rect x="-21" y="518" width="42" height="46" rx="8" fill="#f4c20d"/>
-            <path d="M-21 538h42" stroke="#f7f4e6" stroke-width="4" opacity=".9"/>
-            <circle cx="0" cy="494" r="16" fill="#a8794f"/>
-            <path d="M-17 491a17 17 0 0 1 34 0z" fill="#1e5a22"/>
-            <path d="M-16 491h28l12 5h-40z" fill="#1e5a22"/>
-          </g>
-        </defs>
-
-        <rect width="1000" height="675" fill="url(#sky)"/>
-        <circle cx="812" cy="92" r="132" fill="#fff8dd" opacity=".5"/>
-        <!-- ridgelines behind the neighbourhood -->
-        <path d="M0 268 L128 208 L262 250 L400 192 L548 246 L700 202 L858 248 L1000 210 V360 H0Z" fill="#7d8c6d" opacity=".7"/>
-        <path d="M0 306 L172 272 L360 306 L556 268 L760 304 L1000 272 V380 H0Z" fill="#5f7350" opacity=".85"/>
-        <rect x="520" y="368" width="620" height="94" rx="18" fill="#3f5a34"/>
-
-        <!-- the house we're standing in front of -->
-        <path d="M-10 218 L270 104 L550 218 Z" fill="#6b6258"/>
-        <path d="M-10 218 L270 104 L550 218 Z" fill="none" stroke="#544c44" stroke-width="6"/>
-        <rect x="34" y="216" width="472" height="246" fill="#d6cfba"/>
-        <rect x="34" y="216" width="472" height="246" fill="none" stroke="#bdb49d" stroke-width="4"/>
-        <rect x="78" y="286" width="228" height="176" rx="4" fill="#b9b09b"/>
-        <g stroke="#a49b86" stroke-width="4"><path d="M78 330h228M78 374h228M78 418h228"/></g>
-        <rect x="364" y="280" width="104" height="88" rx="4" fill="#7ea4b7"/>
-        <rect x="364" y="280" width="104" height="88" rx="4" fill="none" stroke="#d6cfba" stroke-width="8"/>
-        <rect x="330" y="386" width="72" height="76" rx="4" fill="#3f5a34"/>
-
-        <!-- lawn + driveway -->
-        <rect x="0" y="460" width="1000" height="215" fill="#6f8a4a"/>
-        <rect x="0" y="460" width="1000" height="22" fill="#7d9a53"/>
-        <path d="M76 462 H420 L586 675 H-60 Z" fill="url(#drive)"/>
-        <path d="M76 462 H420" stroke="#8f8b7e" stroke-width="4"/>
-
-        <!-- THE TRUCK -->
-        <g>
-          <ellipse cx="830" cy="580" rx="176" ry="16" fill="rgba(0,0,0,.22)"/>
-          <rect x="668" y="423" width="104" height="96" rx="11" fill="#2e7d32"/>
-          <path d="M678 433h50v38h-58z" fill="#bcd6e2"/>
-          <rect x="660" y="474" width="15" height="24" rx="5" fill="#1e5a22"/>
-          <!-- what we hauled off, filling the bed as the pile disappears -->
-          <g class="loaded">
-            <rect x="782" y="366" width="58" height="42" rx="4" fill="#8a6b57"/>
-            <rect x="848" y="352" width="46" height="56" rx="4" fill="#e2e6e3"/>
-            <rect x="900" y="374" width="54" height="34" rx="4" fill="#c79a63"/>
-            <ellipse cx="962" cy="390" rx="22" ry="17" fill="#2c2f2c"/>
-          </g>
-          <rect x="766" y="407" width="222" height="112" rx="6" fill="#2e7d32"/>
-          <rect x="766" y="407" width="222" height="112" rx="6" fill="none" stroke="#1e5a22" stroke-width="6"/>
-          <rect x="766" y="491" width="222" height="14" fill="#f4c20d"/>
-          <text x="877" y="474" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="29" font-weight="800" fill="#f4c20d" letter-spacing="1">RUST &amp; ROLL</text>
-          <rect x="660" y="515" width="330" height="18" rx="4" fill="#263028"/>
-          <circle cx="722" cy="543" r="32" fill="#1c211d"/><circle cx="722" cy="543" r="14" fill="#8f958c"/>
-          <circle cx="944" cy="543" r="32" fill="#1c211d"/><circle cx="944" cy="543" r="14" fill="#8f958c"/>
-        </g>
-
-        <!-- THE PILE (act 2) — each item lifts away on the same beat, staggered -->
-        <g id="pile" transform="translate(-120,-29)">
-          <g class="junk">
-            <path d="M152 604 L214 604 L250 452 L188 452 Z" fill="#ece3cf"/>
-            <path d="M152 604 L214 604 L250 452 L188 452 Z" fill="none" stroke="#c9bda1" stroke-width="5"/>
-            <path d="M168 566h62M176 528h62M184 490h62" stroke="#d7cbb0" stroke-width="5"/>
-          </g>
-          <g class="junk">
-            <rect x="258" y="470" width="80" height="134" rx="5" fill="#e2e6e3"/>
-            <rect x="258" y="470" width="80" height="134" rx="5" fill="none" stroke="#b0b7b3" stroke-width="5"/>
-            <path d="M258 522h80" stroke="#b0b7b3" stroke-width="5"/>
-            <rect x="318" y="486" width="9" height="28" rx="4" fill="#9aa19d"/>
-          </g>
-          <g class="junk">
-            <rect x="348" y="484" width="168" height="46" rx="10" fill="#8a6b57"/>
-            <rect x="348" y="524" width="168" height="80" rx="10" fill="#9c7b64"/>
-            <path d="M404 524v80M460 524v80" stroke="#8a6b57" stroke-width="5"/>
-          </g>
-          <g class="junk">
-            <rect x="330" y="546" width="76" height="58" rx="4" fill="#c79a63"/>
-            <path d="M330 570h76" stroke="#a9814f" stroke-width="5"/>
-            <rect x="352" y="502" width="62" height="46" rx="4" fill="#b98a55"/>
-          </g>
-          <g class="junk">
-            <ellipse cx="546" cy="588" rx="44" ry="17" fill="#2c2f2c"/>
-            <ellipse cx="546" cy="588" rx="17" ry="7" fill="#4d514d"/>
-            <ellipse cx="546" cy="560" rx="44" ry="17" fill="#333733"/>
-            <ellipse cx="546" cy="560" rx="17" ry="7" fill="#565a56"/>
-          </g>
-        </g>
-
-        <!-- clean-driveway glints (act 3) -->
-        <g id="sparks" transform="translate(-120,-29)" fill="#fffdf2">
-          <g class="sparkle"><path d="M250 556 l8 22 22 8 -22 8 -8 22 -8-22 -22-8 22-8z"/></g>
-          <g class="sparkle"><path d="M430 610 l6 17 17 6 -17 6 -6 17 -6-17 -17-6 17-6z"/></g>
-          <g class="sparkle"><path d="M170 646 l7 19 19 7 -19 7 -7 19 -7-19 -19-7 19-7z"/></g>
-          <g class="sparkle"><path d="M566 566 l6 16 16 6 -16 6 -6 16 -6-16 -16-6 16-6z"/></g>
-        </g>
-
-        <!-- THE CREW -->
-        <g class="lift">
-          <ellipse cx="470" cy="579" rx="38" ry="10" fill="rgba(0,0,0,.22)"/>
-          <use href="#worker" x="470" y="-45"/>
-          <g fill="#f4c20d"><rect x="438" y="471" width="14" height="52" rx="7"/><rect x="490" y="471" width="14" height="52" rx="7"/></g>
-          <circle cx="445" cy="527" r="8" fill="#a8794f"/><circle cx="497" cy="527" r="8" fill="#a8794f"/>
-        </g>
-        <g>
-          <ellipse cx="575" cy="579" rx="38" ry="10" fill="rgba(0,0,0,.22)"/>
-          <use href="#worker" x="575" y="-45"/>
-          <rect x="544" y="471" width="14" height="52" rx="7" fill="#f4c20d"/>
-          <circle cx="551" cy="527" r="8" fill="#a8794f"/>
-          <!-- three poses of the same arm, cross-faded: down while working, then a two-beat wave -->
-          <g class="arm-down">
-            <rect x="595" y="471" width="14" height="52" rx="7" fill="#f4c20d"/>
-            <circle cx="602" cy="529" r="8" fill="#a8794f"/>
-          </g>
-          <g class="arm-up-a" transform="rotate(-124 602 477)">
-            <rect x="595" y="471" width="14" height="52" rx="7" fill="#f4c20d"/>
-            <circle cx="602" cy="529" r="9" fill="#c99a68"/>
-          </g>
-          <g class="arm-up-b" transform="rotate(-96 602 477)">
-            <rect x="595" y="471" width="14" height="52" rx="7" fill="#f4c20d"/>
-            <circle cx="602" cy="529" r="9" fill="#c99a68"/>
-          </g>
-        </g>
-      </svg>
-    </div>
-
-    <div class="film-scrim"></div>
-  </div>
-
-  <div class="film-cap" aria-hidden="true">
-    <span class="c1">Your driveway, from 400 feet up</span>
-    <span class="c2">Two-man crew rolls out — same week</span>
-    <span class="c3">Gone. Flat rate, swept clean.</span>
-  </div>
-
+<main id="main">
+<section class="hero">
   <div class="wrap">
-    <h1>We Haul It All — Junk, <span class="accent">Dead Cars</span> &amp; Equipment</h1>
-    <p class="sub">One call, one truck, one flat price. Appliances, furniture, garage cleanouts, that non-running car in the driveway, and light equipment moves — same week, no mystery pricing.</p>
-    <div class="cta">
-      <a class="btn btn-primary" href="sms:7604106887">Text for a Quote</a>
-      <a class="btn btn-ghost" href="tel:7604106887">Call (760) 410-6887</a>
+    <p class="eyebrow">Vista &amp; North San Diego County</p>
+    <h1>Junk gone. Dead car gone. <em>Done.</em></h1>
+    <p class="lead">Junk removal, non-running junk car pickup and light equipment hauling. Text a photo of what needs to go and get a flat quote.</p>
+    <div class="cta-row">
+      <a class="btn" href="sms:+17604106887?&amp;body=Hi%20Oscar%2C%20I%20need%20a%20hauling%20quote.%20Here%27s%20a%20photo%20of%20what%20needs%20to%20go%3A">Text a photo for a quote</a>
+      <a class="btn btn-ghost" href="tel:+17604106887">Call (760) 410-6887</a>
     </div>
-    <div class="trust"><b>✓</b> Same-week service &nbsp; <b>✓</b> Flat rates, no hidden fees &nbsp; <b>✓</b> Free quotes</div>
-    <div class="area">Serving Vista · Oceanside · Carlsbad · Escondido · Encinitas · San Marcos</div>
+    <ul class="facts">
+      <li>Owner-operated by Oscar Correa, locally owned in Vista</li>
+      <li>You deal with the owner directly</li>
+      <li>Upfront price by text before we lift anything</li>
+      <li>Pickups 7 days, 6 AM–7 PM</li>
+      <li>Pay when it's done: cash, Venmo, Zelle</li>
+      <li>Metal recycled, usable goods donated</li>
+    </ul>
   </div>
 </section>
 
-<!-- PILLARS -->
-<section>
-  <div class="wrap">
-    <h2 class="section-title">What We Haul</h2>
-    <p class="section-sub">Three jobs, one phone number. Most folks need two of these at once — we handle all three.</p>
-    <div class="cards">
-      <div class="card">
-        <div class="ico">🗑️</div>
-        <h3>Junk &amp; Trash Removal</h3>
-        <p>Appliances, furniture, mattresses, yard debris, garage and estate cleanouts, scrap metal, light construction debris. If it's piled up and in your way, it's gone today.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🚗</div>
-        <h3>Junk &amp; Scrap Cars</h3>
-        <p>That non-running car or truck taking up the driveway? We haul it off — often <strong>free</strong> when the scrap covers it. Bring the title, we handle the rest.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🚜</div>
-        <h3>Light Equipment Hauling</h3>
-        <p>Need a mower, generator, or small machine moved across town? We load it, strap it down, and deliver it. Short-haul, flat-rate, no rental headache.</p>
-      </div>
-    </div>
+<section id="services" class="wrap sec">
+  <h2>What we haul</h2>
+  <div class="grid">
+    <article class="card"><h3>Junk &amp; trash removal</h3><p>Single items up to full truck-and-trailer loads.</p></article>
+    <article class="card"><h3>Furniture &amp; appliances</h3><p>Couches, mattresses, fridges, washers and more.</p></article>
+    <article class="card"><h3>Garage &amp; yard cleanouts</h3><p>Clear out the garage, shed, side yard or whole property.</p></article>
+    <article class="card"><h3>Junk car removal</h3><p>Non-running cars and trucks. Title or DMV paperwork required.</p></article>
+    <article class="card"><h3>Scrap metal pickup</h3><p>Steel, copper, aluminum and metal appliances.</p></article>
+    <article class="card"><h3>Light equipment hauling</h3><p>Mowers, generators, tillers and small machines, moved locally.</p></article>
+  </div>
+  <p class="note">Heavy materials (concrete, tile, dirt, roofing, brick) are quoted separately.</p>
+  <div class="price card">
+    <h3>Simple pricing</h3>
+    <p><strong>Minimum $75</strong> for a quick pickup or single small item. <strong>Full load (truck bed + trailer): $450&ndash;$550.</strong> Dump fees included (heavy materials quoted separately). You get the exact price by text before we lift anything.</p>
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="alt">
-  <div class="wrap">
-    <h2 class="section-title">Straight-Up Flat Rates</h2>
-    <p class="section-sub">No "free estimate" runaround — here's what it costs. Final price confirmed before we touch anything. Quote first, load second.</p>
-    <table>
-      <tr><th>What you've got</th><th>Price</th></tr>
-      <tr><td>Minimum charge (one quick pickup)</td><td class="price">$75</td></tr>
-      <tr><td>Single large item (fridge, washer, couch)</td><td class="price">$75–$100</td></tr>
-      <tr><td>2–3 items</td><td class="price">$110–$160</td></tr>
-      <tr><td>Quarter load</td><td class="price">$150–$225</td></tr>
-      <tr><td>Half load</td><td class="price">$250–$350</td></tr>
-      <tr><td>Full load / cleanout</td><td class="price">$450–$550</td></tr>
-      <tr><td>Estate / property cleanout</td><td class="price">Free on-site quote</td></tr>
-      <tr><td><strong>Junk car removal</strong></td><td class="price">$0–$150*</td></tr>
-      <tr><td><strong>Light equipment move</strong> (local)</td><td class="price">$75–$125</td></tr>
-    </table>
-    <p class="price-note">$75 minimum · dump fees included · heavy materials (concrete, tile) quoted separately.<br>*Junk cars are often <strong>free</strong> — we make it on the scrap.</p>
+<section id="how" class="band">
+  <div class="wrap sec">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><strong>Text us a photo.</strong> Send a picture or description of what needs to go.</li>
+      <li><strong>Get a flat quote.</strong> You know the price before we lift anything.</li>
+      <li><strong>We haul it.</strong> You point, we load. Pay when it's done.</li>
+    </ol>
   </div>
 </section>
 
-<!-- WHY -->
-<section>
-  <div class="wrap">
-    <h2 class="section-title">Why Folks Call Us</h2>
-    <p class="section-sub"></p>
-    <div class="why">
-      <div><div class="e">⚡</div><div><h3>Same-week, often same-day</h3><p>Text us and you'll hear back within the hour — not a dispatch queue.</p></div></div>
-      <div><div class="e">💵</div><div><h3>Flat rates, no hidden fees</h3><p>You know the price before we lift a finger. Dump fees included.</p></div></div>
-      <div><div class="e">♻️</div><div><h3>We recycle &amp; donate</h3><p>Metal and e-waste get recycled, usable goods get donated. Less in the landfill.</p></div></div>
-      <div><div class="e">📞</div><div><h3>One call does it all</h3><p>Junk, dead cars, and equipment — you don't need three different guys.</p></div></div>
-    </div>
-    <div style="text-align:center;margin-top:36px">
-      <a class="btn btn-primary" href="sms:7604106887">Text for a Flat Quote — (760) 410-6887</a>
-    </div>
+<!-- BEFORE/AFTER hidden until real job photos exist. To restore: uncomment, change <!~~ ~~> back to HTML comments, and re-add <a href="#work">Our work</a> to the nav.
+<section id="work" class="wrap sec">
+  <h2>Before &amp; after</h2>
+  <p class="note">PLACEHOLDER: real job photos coming soon.</p>
+  <div class="ba">
+    <figure><div class="ph">BEFORE photo<br>(placeholder)</div><div class="ph alt">AFTER photo<br>(placeholder)</div><figcaption>PLACEHOLDER caption, e.g. job type + city</figcaption></figure>
+    <figure><div class="ph">BEFORE photo<br>(placeholder)</div><div class="ph alt">AFTER photo<br>(placeholder)</div><figcaption>PLACEHOLDER caption</figcaption></figure>
+    <figure><div class="ph">BEFORE photo<br>(placeholder)</div><div class="ph alt">AFTER photo<br>(placeholder)</div><figcaption>PLACEHOLDER caption</figcaption></figure>
   </div>
+  <!~~ To add photos: put img/job1-before.jpg etc. (WebP/JPG, ~1200px wide, <200KB) and replace each .ph div with
+       <img src="img/job1-before.jpg" alt="..." width="600" height="450" loading="lazy"> ~~>
 </section>
+-->
 
-<!-- STEPS -->
-<section class="alt">
-  <div class="wrap">
-    <h2 class="section-title">How It Works</h2>
-    <p class="section-sub"></p>
-    <div class="steps">
-      <div class="step"><div class="num">1</div><h3>Text us a photo</h3><p>Send a pic or description of what needs to go.</p></div>
-      <div class="step"><div class="num">2</div><h3>Get a flat quote</h3><p>We give you the price within the hour — no surprises.</p></div>
-      <div class="step"><div class="num">3</div><h3>We haul it</h3><p>Same week. You point, we load, it's gone. Pay when it's done — cash, Venmo, or Zelle.</p></div>
+<section id="area" class="band"><div class="wrap sec">
+  <h2>Where we haul</h2>
+  <p>Based in Vista and serving North San Diego County. Not sure you're in range? Just ask.</p>
+  <ul class="areas">
+    <li><strong>Vista</strong> 92081, 92083, 92084</li>
+    <li><strong>Oceanside</strong></li><li><strong>Carlsbad</strong></li><li><strong>Escondido</strong></li><li><strong>San Marcos</strong></li><li><strong>Encinitas</strong></li>
+  </ul>
+</div></section>
+
+<section id="quote" class="wrap sec">
+  <h2>Get a free quote</h2>
+  <p>Fill this out and it opens a pre-written text to (760) 410-6887. Attach a photo in your messaging app for the fastest quote.</p>
+  <form id="qf" class="form" novalidate>
+    <label>Name <input name="name" type="text" required autocomplete="name"></label>
+    <label>Phone <input name="phone" type="tel" required autocomplete="tel"></label>
+    <label>City <input name="city" type="text" autocomplete="address-level2"></label>
+    <label>What needs hauling? <textarea name="what" rows="4" required placeholder="e.g. old fridge and couch in the garage, or a non-running car"></textarea></label>
+    <p id="qerr" class="err" role="alert" hidden>Please fill in name, phone and what needs hauling.</p>
+    <div class="cta-row">
+      <button class="btn" type="submit" name="via" value="sms">Send by text</button>
+      <button class="btn btn-ghost" type="submit" name="via" value="email">Send by email</button>
     </div>
-  </div>
+  </form>
 </section>
+</main>
 
-<!-- BOOK A TIME -->
-<section id="book">
-  <div class="wrap">
-    <h2 class="section-title">Book a Time Slot</h2>
-    <p class="section-sub">Pick an open time that works for you — we'll confirm and roll out.</p>
+<footer class="foot"><div class="wrap">
+  <p><strong>Rust &amp; Roll Hauling</strong> · Junk removal · Junk cars · Equipment hauling · Vista, CA</p>
+  <p><a href="tel:+17604106887">(760) 410-6887</a> · <a href="mailto:pawnsweat2021@gmail.com">pawnsweat2021@gmail.com</a> · Cash · Venmo · Zelle</p>
+  <p class="small">© <span id="yr">2026</span> Rust &amp; Roll Hauling</p>
+</div></footer>
 
-    <!-- ============================================================
-         CALENDAR EMBED GOES HERE.
-         Replace the <div class="cal-placeholder">…</div> below with
-         your scheduler embed code. See SETUP.md → "Booking calendar".
-
-         Google Calendar Appointment Schedule (free, recommended):
-           <div class="cal-embed">
-             <iframe src="https://calendar.google.com/calendar/appointments/schedules/XXXXXXXX?gv=true"
-                     style="height:600px" frameborder="0"></iframe>
-           </div>
-
-         Calendly (alternative):
-           <div class="cal-embed">
-             <iframe src="https://calendly.com/your-handle/hauling"
-                     style="height:680px" frameborder="0"></iframe>
-           </div>
-         ============================================================ -->
-
-    <div class="cal-placeholder">
-      <p style="font-size:1.05rem;margin-bottom:10px">📅 <strong>Online booking calendar loads here.</strong></p>
-      <p>Until it's connected, book by text or call:</p>
-      <p style="margin-top:14px"><a class="btn btn-primary" href="sms:7604106887">Text to Book — (760) 410-6887</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ — natural-language questions with front-loaded answers; this is the section AI
-     search engines extract when recommending local services. Keep answers factual — they
-     mirror the price sheet and Research/dmv-junk-car-paperwork.md. -->
-<section class="alt" id="faq">
-  <div class="wrap">
-    <h2 class="section-title">Questions We Get Every Week</h2>
-    <p class="section-sub">Straight answers — the same ones we give over text.</p>
-    <div class="faq">
-      <details>
-        <summary>How much does junk removal cost in North County?</summary>
-        <p>$75 minimum, and most single large items (fridge, couch, washer) run $75–$100. A full trailer load or cleanout is $450–$550, dump fees included. Text a photo to (760) 410-6887 and you'll have a flat price within the hour.</p>
-      </details>
-      <details>
-        <summary>Can you take a junk car if I lost the title?</summary>
-        <p>Usually, yes. If you're the registered owner and there's no lienholder on record, California's REG 227 form replaces a lost title — no notary needed, and we'll walk you through it. If you're not the registered owner and there's no title, nobody can legally junk that car, so we'd have to pass.</p>
-      </details>
-      <details>
-        <summary>Is junk car removal really free?</summary>
-        <p>Often, yes — on most complete cars the scrap value covers the tow, so you pay nothing. If the catalytic converter or wheels are missing, or it's a tough spot to pull from, it can run up to $150. Either way you get the number before we hook up. One tip: file the free DMV Release of Liability (REG 138) within 5 days of pickup — it protects you from future tickets on the car.</p>
-      </details>
-      <details>
-        <summary>What areas do you serve?</summary>
-        <p>Vista, Oceanside, Carlsbad, Escondido, Encinitas, and San Marcos — plus most of surrounding North San Diego County. A little outside that? Text us anyway; short trips usually work.</p>
-      </details>
-      <details>
-        <summary>Is there anything you won't haul?</summary>
-        <p>Hazardous waste — paint, chemicals, asbestos — is a no. Appliances, e-waste, scrap metal, furniture, yard debris, and non-running cars are all fair game. Heavy material like concrete or tile gets quoted separately by weight.</p>
-      </details>
-      <details>
-        <summary>How fast can you get here?</summary>
-        <p>Same week, often same day. We answer texts within the hour, 6am–7pm, seven days a week. A photo of the pile speeds up your quote.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SOCIAL PROOF (reviews + before/after) — INTENTIONALLY HIDDEN until you have REAL content.
-     Per the conversion playbook: an empty proof block looks worse than none, and fake reviews/
-     stock photos destroy trust. Both templates below are commented out. Activate ONLY with real
-     jobs/reviews — uncomment the block, fill it in, re-deploy. Placed here on purpose: proof sits
-     directly above the quote form (reviews near a CTA tested at a 68% lift).
-
-     ==== (A) RECENT HAULS — before/after photos ====
-     Drop 2-3 real job photos into the Website folder (e.g. haul1-before.jpg / haul1-after.jpg),
-     keep them ~1200px wide and compressed, then uncomment:
-
-<section class="alt">
-  <div class="wrap">
-    <h2 class="section-title">Recent Hauls</h2>
-    <p class="section-sub">Real driveways, real loads — before and after.</p>
-    <div class="cards">
-      <div class="card" style="padding:0;overflow:hidden">
-        <img src="haul1-before.jpg" alt="Garage full of junk before Rust & Roll hauled it" loading="lazy" style="width:100%;display:block">
-        <img src="haul1-after.jpg" alt="Same garage cleared out and swept" loading="lazy" style="width:100%;display:block">
-        <p style="padding:14px 18px">Garage cleanout in Vista — gone same week.</p>
-      </div>
-      (duplicate the .card above for haul2, haul3… then delete this note)
-    </div>
-  </div>
-</section>
-
-     ==== (B) WHAT CUSTOMERS SAY — reviews ====
-     Use ONLY real reviews (Google / Facebook / a text a customer sent you, with permission).
-     Replace the names/quotes, then uncomment. Also uncomment the matching Review JSON-LD at the
-     bottom of <head> (search "REVIEW SCHEMA") so the stars can show in search results — but only
-     once these are real, or Google penalizes it.
-
-<section>
-  <div class="wrap">
-    <h2 class="section-title">What Customers Say</h2>
-    <p class="section-sub">★★★★★ from your North County neighbors.</p>
-    <div class="cards">
-      <div class="card">
-        <p style="font-size:1.4rem;color:var(--gold)">★★★★★</p>
-        <p>"REAL customer quote here — what they needed hauled and how it went."</p>
-        <p style="margin-top:10px;font-weight:700;color:var(--rust-dark)">— First name, City</p>
-      </div>
-      (duplicate the .card above for 2-3 real reviews, then delete this note)
-    </div>
-    <div style="text-align:center;margin-top:36px">
-      <a class="btn btn-primary" href="sms:7604106887">Text for a Flat Quote — (760) 410-6887</a>
-    </div>
-  </div>
-</section>
-     ============================================================ -->
-
-<!-- QUOTE -->
-<section class="quote" id="quote">
-  <div class="wrap">
-    <h2 class="section-title">Get Your Free Quote</h2>
-    <p class="section-sub" style="color:#c8c4bc">Tell us what needs hauling and we'll text you a flat price — usually within the hour.</p>
-    <form id="quoteForm">
-      <!-- Web3Forms: paste your access key below (see SETUP.md). -->
-      <input type="hidden" name="access_key" value="e672aecb-6666-4fff-8ac3-7b26e23c9f9f">
-      <input type="hidden" name="subject" value="New Quote Request — Rust & Roll Hauling">
-      <input type="hidden" name="from_name" value="Rust & Roll Website">
-      <!-- honeypot spam trap -->
-      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-
-      <label for="name">Name</label>
-      <input id="name" name="name" type="text" required>
-      <label for="phone">Phone</label>
-      <input id="phone" name="phone" type="tel" required>
-      <label for="city">City <span style="font-weight:400;color:#c8c4bc">(optional)</span></label>
-      <input id="city" name="city" type="text" placeholder="Vista, Oceanside, Carlsbad…">
-      <div class="row">
-        <div>
-          <label for="pref_date">Preferred date <span style="font-weight:400;color:#c8c4bc">(optional)</span></label>
-          <input id="pref_date" name="preferred_date" type="date">
-        </div>
-        <div>
-          <label for="pref_time">Preferred time <span style="font-weight:400;color:#c8c4bc">(optional)</span></label>
-          <input id="pref_time" name="preferred_time" type="time">
-        </div>
-      </div>
-      <label for="details">What needs hauling?</label>
-      <textarea id="details" name="details" required placeholder="e.g. old fridge + couch in the garage, or a non-running car"></textarea>
-
-      <!-- Photo path: SMS/MMS to the business line. Deliberately NOT a file upload —
-           the form backend (Web3Forms free) can't attach files, and an unsigned
-           image-host upload would expose an abusable public preset. -->
-      <div class="photo-cta">📸 <strong>Got a photo?</strong> A picture beats a paragraph — <a href="sms:7604106887?&amp;body=Hi%20Rust%20%26%20Roll%2C%20here%27s%20a%20photo%20of%20what%20needs%20hauling%3A%20">text it to (760) 410-6887</a> and we'll ballpark it fast.</div>
-
-      <!-- Quick-read assistant: instant ballpark from the published price sheet while they type.
-           Pure in-page rules — no AI, no external calls. Its summary also rides along in the
-           lead email via the hidden fields below. -->
-      <div class="assist" id="assist" aria-live="polite">
-        <div class="assist-head">🚛 QUICK READ — INSTANT BALLPARK</div>
-        <div id="assistBody"></div>
-        <div class="assist-note">Ballpark from our published rates — the owner confirms your exact flat price before we touch anything.</div>
-      </div>
-      <input type="hidden" name="lead_analysis" id="leadAnalysis">
-      <input type="hidden" name="lead_priority" id="leadPriority">
-      <!-- hCaptcha (free tier) — also enable "hCaptcha" on this form in the Web3Forms
-           dashboard, or direct-to-API spam can still bypass the widget. -->
-      <div class="h-captcha" data-captcha="true" data-theme="dark" style="margin:14px 0"></div>
-      <button class="btn btn-primary" type="submit" id="submitBtn">Get My Flat Quote</button>
-      <div id="formResult"></div>
-    </form>
-    <p class="or">Prefer to text? <a href="sms:7604106887">(760) 410-6887</a> — send a photo of the pile for the fastest same-day quote.</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="brand-f">RUST &amp; ROLL <span>HAULING</span></div>
-    <div>Junk Removal · Junk Cars · Equipment Hauling — North San Diego County</div>
-    <div style="margin-top:10px">
-      📞 <a href="tel:7604106887">(760) 410-6887</a> &nbsp;·&nbsp;
-      ✉️ <a href="mailto:pawnsweat2021@gmail.com">pawnsweat2021@gmail.com</a>
-    </div>
-    <div class="pay">Cash · Venmo · Zelle · Local pickup, same week · Serving Vista, Oceanside, Carlsbad, Escondido, Encinitas &amp; San Marcos</div>
-  </div>
-</footer>
-
-<a class="sticky-call" href="tel:7604106887">📞 Tap to Call — (760) 410-6887</a>
-
-<script>
-  // ---------- QUICK-READ ASSISTANT ----------
-  // Deterministic rules against the published price sheet. Runs 100% in the browser:
-  // no API calls, no key, no tracking. It NEVER commits a price — ranges only, owner
-  // confirms. Conclusions also ride along in the lead email (hidden fields) so the
-  // inbox copy arrives pre-analyzed.
-  var assistBox=document.getElementById('assist');
-  var assistBody=document.getElementById('assistBody');
-  var detailsEl=document.getElementById('details');
-  var cityEl=document.getElementById('city');
-
-  var TOWNS=['vista','oceanside','carlsbad','escondido','encinitas','san marcos'];
-  var ITEM_WORDS=/fridge|refrigerator|freezer|washer|dryer|couch|sofa|sectional|mattress|box\s*spring|bed\b|dresser|table|desk|tv\b|television|stove|oven|dishwasher|recliner|chair|bookshelf|cabinet|treadmill|elliptical|grill|water\s*heater|appliance|furniture/g;
-
-  function analyze(){
-    var d=(detailsEl.value||'').toLowerCase();
-    var city=(cityEl.value||'').toLowerCase().trim();
-    var out=[];        // visitor-facing bubbles (may contain <b>)
-    var summary=[];    // plain-text conclusions for the lead email
-    var priority='normal';
-
-    if(d.replace(/\s/g,'').length<8){render([]);return {summary:'',priority:priority};}
-
-    // 1. Hazardous waste — the one hard no.
-    if(/paint|chemical|asbestos|propane|gas\s*tank|motor\s*oil|pesticide/.test(d)){
-      out.push("Heads up: we can't take <b>hazardous waste</b> (paint, chemicals, asbestos). Everything else on your list is fair game.");
-      summary.push('HAZMAT mentioned - partial decline');
-    }
-
-    // 2. Junk / scrap car.
-    if(/\b(car|truck|van|suv|vehicle|auto|sedan|pickup)\b/.test(d) && !/car\s*seat|truck\s*load|truckload/.test(d)){
-      out.push("Non-running car or truck? Those run <b>$0–$150</b> — often <b>free</b>, because the scrap usually covers the tow.");
-      if(/no\s*title|lost\s*(the\s*)?title|can'?t\s*find\s*(the\s*)?title|missing\s*title/.test(d)){
-        out.push("Lost title? Usually still fine — if you're the registered owner with no lien, California's <b>REG 227</b> form replaces it. We'll walk you through it.");
-        summary.push('JUNK CAR - LOST TITLE (REG 227 path)');
-      }else{
-        out.push("Have the <b>title</b> handy (or we'll help sort it) and we handle the rest.");
-        summary.push('JUNK CAR - est $0-150');
-      }
-      priority='high';
-    }
-
-    // 3. Heavy materials — quoted separately.
-    if(/concrete|brick|tile|gravel|rock|sand|asphalt|\bdirt\b|\bsod\b/.test(d)){
-      out.push("Heavy material like <b>concrete, tile, or dirt</b> gets quoted separately by weight — text a photo of the pile and we'll price it straight.");
-      summary.push('HEAVY MATERIALS - separate quote');
-    }
-
-    // 4. Equipment move.
-    if(/mower|generator|tractor|welder|compressor|small\s*machine|equipment/.test(d)){
-      out.push("Local <b>equipment move</b> (mower, generator, small machine): <b>$75–$125</b> flat.");
-      summary.push('EQUIPMENT MOVE - est $75-125');
-    }
-
-    // 5. Cleanouts and load-size words.
-    if(/estate|whole\s*house|eviction|hoard/.test(d)){
-      out.push("<b>Estate / whole-property cleanout</b> — we do those on a <b>free on-site quote</b>. Pick a time below and we'll come look, no obligation.");
-      summary.push('ESTATE/PROPERTY CLEANOUT - onsite quote');
-      priority='high';
-    }else if(/clean\s*out|cleanout|garage\s*(full|packed)|storage\s*unit|full\s*load|truckload|truck\s*load|trailer\s*load/.test(d)){
-      out.push("Sounds like a <b>full load / cleanout</b>: typically <b>$450–$550</b>, dump fees included.");
-      summary.push('FULL LOAD/CLEANOUT - est $450-550');
-      priority='high';
-    }else if(/half\s*(a\s*)?(load|trailer|truck)/.test(d)){
-      out.push("A <b>half load</b> usually runs <b>$250–$350</b>, dump fees included.");
-      summary.push('HALF LOAD - est $250-350');
-    }else if(/quarter\s*(load)?|\bfew\s*(bags|boxes)/.test(d)){
-      out.push("A <b>quarter load</b> usually runs <b>$150–$225</b>, dump fees included.");
-      summary.push('QUARTER LOAD - est $150-225');
-    }else{
-      // 6. Count recognizable items if no load-size word matched.
-      var items=(d.match(ITEM_WORDS)||[]).length;
-      if(/\b(2|two|3|three|couple|few)\b/.test(d) && items>0) items=Math.max(items,2);
-      if(items===1){
-        out.push("A <b>single large item</b> (fridge, couch, washer) runs <b>$75–$100</b> flat, dump fees included.");
-        summary.push('SINGLE ITEM - est $75-100');
-      }else if(items>=2&&items<=3){
-        out.push("<b>2–3 items</b> usually runs <b>$110–$160</b> flat, dump fees included.");
-        summary.push('2-3 ITEMS - est $110-160');
-      }else if(items>3){
-        out.push("That's a solid pile — likely a <b>quarter to half load</b>, <b>$150–$350</b>. A photo gets you the exact flat price fastest.");
-        summary.push('4+ ITEMS - est $150-350 (photo requested)');
-      }
-    }
-
-    // 7. Licensed/insured question — never claimed by the page.
-    if(/licens|insured|insurance|bonded/.test(d)){
-      out.push("That one's for the owner — he'll answer it directly when he texts your quote.");
-      summary.push('ASKED LICENSED/INSURED - owner must answer');
-    }
-
-    // 8. Service-area check.
-    if(city){
-      var known=TOWNS.some(function(t){return city.indexOf(t)!==-1;});
-      if(known){out.push("✓ <b>"+cityEl.value.trim()+"</b> is right in our service area.");}
-      else{out.push("A little outside our usual towns? Send it anyway — short trips usually work.");summary.push('CITY OUTSIDE CORE AREA: '+cityEl.value.trim());}
-    }
-
-    // 9. Nothing matched but they wrote something → fastest path.
-    if(out.length===0){
-      out.push("Easiest way to a flat price: <b>text a photo</b> to <b>(760) 410-6887</b> — quotes usually come back within the hour.");
-      summary.push('NO RULE MATCH - photo requested');
-    }
-
-    render(out);
-    return {summary:summary.join(' | '),priority:priority};
-  }
-
-  function render(bubbles){
-    if(bubbles.length===0){assistBox.className='assist';assistBody.innerHTML='';return;}
-    assistBody.innerHTML=bubbles.map(function(b){
-      return '<div class="assist-bubble"><span class="who">🚛</span><p>'+b+'</p></div>';
-    }).join('');
-    assistBox.className='assist on';
-  }
-
-  var assistTimer=null;
-  function queueAnalyze(){clearTimeout(assistTimer);assistTimer=setTimeout(analyze,450);}
-  detailsEl.addEventListener('input',queueAnalyze);
-  cityEl.addEventListener('input',queueAnalyze);
-
-  // ---------- FORM SUBMIT ----------
-  // Emails the quote request straight to your inbox via Web3Forms (free, no backend).
-  // Setup: get a free access key at https://web3forms.com using pawnsweat2021@gmail.com,
-  // then paste it into the form's hidden "access_key" field above. See SETUP.md.
-  var form=document.getElementById('quoteForm');
-  var result=document.getElementById('formResult');
-  var btn=document.getElementById('submitBtn');
-
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    // Pack the quick-read conclusions into the lead email so it arrives pre-analyzed.
-    var a=analyze();
-    document.getElementById('leadAnalysis').value=a.summary||'(no rule match)';
-    document.getElementById('leadPriority').value=a.priority;
-    var data=Object.fromEntries(new FormData(form));
-    var key=form.querySelector('[name=access_key]').value;
-
-    // No email backend connected yet → fall back to a pre-filled text so the lead still reaches us.
-    // (On a phone this opens the messaging app with the details ready to send.)
-    if(key.indexOf('YOUR_WEB3FORMS')!==-1){
-      var msg='Quote request — '+(data.name||'')
-        +(data.phone?(' ('+data.phone+')'):'')
-        +(data.city?(', '+data.city):'')
-        +'. '+(data.details||'')
-        +(data.preferred_date?(' Preferred: '+data.preferred_date+' '+(data.preferred_time||'')):'');
-      window.location.href='sms:7604106887?&body='+encodeURIComponent(msg.trim());
-      result.className='ok';
-      result.textContent='✓ Opening your texts with the details — just hit send and we’ll quote you within the hour.';
-      return;
-    }
-
-    // hCaptcha must be solved before we send (FormData picks the token up automatically).
-    if(!data['h-captcha-response']){
-      result.className='err';
-      result.textContent='Please check the "I am human" box above, then resubmit.';
-      return;
-    }
-
-    btn.disabled=true; btn.textContent='Sending…';
-    result.className=''; result.textContent='';
-
-    fetch('https://api.web3forms.com/submit',{
-      method:'POST',
-      headers:{'Content-Type':'application/json',Accept:'application/json'},
-      body:JSON.stringify(data)
-    })
-    .then(function(r){return r.json();})
-    .then(function(json){
-      if(json.success){
-        result.className='ok';
-        result.textContent='✓ Got it! We’ll text you a flat quote shortly — usually within the hour.';
-        form.reset();
-        render([]);
-        if(window.hcaptcha)hcaptcha.reset();
-      }else{
-        result.className='err';
-        result.textContent='Something went wrong. Please text us at (760) 410-6887.';
-      }
-    })
-    .catch(function(){
-      result.className='err';
-      result.textContent='Network error. Please text us at (760) 410-6887.';
-    })
-    .finally(function(){
-      btn.disabled=false; btn.textContent='Get My Flat Quote';
-    });
-  });
-</script>
-<!-- Web3Forms client script — renders the hCaptcha widget above. -->
-<script src="https://web3forms.com/client/script.js" async defer></script>
-
+<nav class="sticky" aria-label="Quick contact">
+  <a href="tel:+17604106887">📞 Call</a><a href="sms:+17604106887?&amp;body=Hi%20Oscar%2C%20I%20need%20a%20hauling%20quote.%20Here%27s%20a%20photo%20of%20what%20needs%20to%20go%3A" class="hot">💬 Text</a><a href="#quote">Quote</a>
+</nav>
+<script src="app.js" defer></script>
 </body>
 </html>
